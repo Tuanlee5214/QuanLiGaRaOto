@@ -1,0 +1,260 @@
+﻿CREATE DATABASE QUANLYGARA --Đã sửa chữa lại những lỗi sai (2)
+
+USE QUANLYGARA
+
+-- 1.NGUOIDUNG
+CREATE TABLE NGUOIDUNG 
+(
+	MaNguoiDung char(7) primary key not null,
+	TenNguoiDung nvarchar(30) not null,
+	NgaySinh datetime,
+	TenDangNhap varchar(30) not null unique,
+	MatKhau varchar(100) not null,
+	MaNhomND char(7) not null 
+)
+
+-- 2.NHOMNGUOIDUNG
+CREATE TABLE NHOMNGUOIDUNG 
+(
+	MaNhomND char(7) primary key not null, 
+	TenNhomNguoiDung nvarchar(30) not null unique,
+)
+
+-- 3.PHANQUYEN
+CREATE TABLE PHANQUYEN 
+(
+	MaChucNang char(7) not null, 
+	MaNhomND char(7) not null, 
+	primary key (MaChucNang, MaNhomND),
+)
+
+-- 4.CHUCNANG
+CREATE TABLE CHUCNANG 
+(
+	MaChucNang char(7) primary key not null,
+	TenChucNang nvarchar(50) not null unique,
+	TenManHinh nvarchar(50) not null,
+)
+
+-- 5.XE
+CREATE TABLE XE 
+(
+	BienSo char(20) primary key not null,
+	HieuXe char(7) not null, 
+	TenChuXe nvarchar(50) not null, 
+	DiaChi nvarchar(200),
+	SDT char(20),
+	Email varchar(50),
+	GhiChu nvarchar(1000),
+	NgayTiepNhan datetime default getdate(),
+	TongNo money 
+)
+
+-- 6.HIEUXE
+CREATE TABLE HIEUXE 
+(
+	HieuXe char(7) primary key not null,
+)
+
+-- 7.NOIDUNGSUACHUA
+CREATE TABLE NOIDUNGSUACHUA
+(
+	MaNoiDung char(7) primary key not null,
+	MoTa nvarchar(1000),
+	TienCong money 
+)
+
+-- 8.PHIEUTHUTIEN
+CREATE TABLE PHIEUTHUTIEN
+(
+	MaPhieuThu char(7) primary key not null,
+	BienSo char(20) not null,
+	NgayThu datetime default getDate(),
+	SoTienThu money
+)
+
+-- 9.DOANHSO
+CREATE TABLE DOANHSO
+(
+	MaBCDS char(7) primary key,
+	Thang int not null,
+	Nam int not null,
+	TongDoanhSo money not null,
+)
+
+-- 10.CT_DOANHSO
+CREATE TABLE CT_DOANHSO
+(
+	MaBCDS char(7) not null, 
+	HieuXe char(7) not null, 
+	primary key (MaBCDS, HieuXe),
+	SoLuotSua int, 
+	ThanhTien money,
+	TiLe float, 
+)
+
+-- 11.PHIEUSUACHUA
+CREATE TABLE PHIEUSUACHUA
+(
+	MaPhieuSC char(7) primary key,
+	BienSo char(20) not null,
+	NgaySuaChua datetime default getdate(),
+	TongTien money default 0, 
+)
+
+-- 12.CT_PHIEUSUACHUA
+CREATE TABLE CT_PHIEUSUACHUA
+(
+	MaPhieuSC char(7) not null, 
+	MaPhuTung char(7) not null, 
+	MaNoiDung char(7) not null, 
+	SoLuong int,
+	DonGia money,
+	ThanhTien money,
+	primary key (MaPhieuSC, MaNoiDung, MaPhuTung),
+	TienCong money,
+)
+
+-- 13.PHUTUNG
+CREATE TABLE PHUTUNG
+(
+	MaPhuTung char(7) primary key,
+	TenPhuTung nvarchar(50) not null,
+	LoaiPhuTung nvarchar(30) not null, 
+	NamSX int,
+	DonGiaNhap money,
+	DonGiaBan money, 
+	SoLuongTon int, 
+	NhaCungCap nvarchar(30) not null
+)
+
+-- 14.PHIEUNHAPPHUTUNG
+CREATE TABLE PHIEUNHAPPHUTUNG
+(
+	MaPhieuNhap char(7) primary key,
+	NgayNhap datetime default getdate(),
+	TongTien money
+)
+
+-- 15.CT_PHIEUNHAPPHUTUNG
+CREATE TABLE CT_PHIEUNHAPPHUTUNG 
+(
+	MaPhieuNhap char(7) not null,
+	MaPhuTung char(7) not null, 
+	primary key (MaPhieuNhap, MaPhuTung),
+	SoLuongNhap int, 
+	DonGiaNhap money, 
+	ThanhTien money
+)
+
+-- 16.CT_BAOCAOTON
+CREATE TABLE CT_BAOCAOTON
+(
+	Thang int not null, 
+	Nam int not null,
+	MaPhuTung char(7) not null, 
+	primary key (Thang, Nam, MaPhuTung), 
+	TonDau int, 
+	PhatSinh int,
+	TonCuoi int 
+)
+
+ALTER TABLE XE ADD CHECK(TongNo >= 0)
+ALTER TABLE NOIDUNGSUACHUA ADD CHECK(TienCong > 0)
+ALTER TABLE PHIEUTHUTIEN ADD CHECK(SoTienThu > 0)
+ALTER TABLE DOANHSO ADD CHECK(Thang between 1 and 12)
+ALTER TABLE DOANHSO ADD CHECK(Nam > 0)
+ALTER TABLE DOANHSO ADD CHECK(TongDoanhSo > 0)
+ALTER TABLE CT_DOANHSO ADD CHECK(SoLuotSua >= 0)
+ALTER TABLE CT_DOANHSO ADD CHECK(ThanhTien >=0)
+ALTER TABLE CT_DOANHSO ADD CHECK(TiLe between 0 and 100)
+ALTER TABLE PHIEUSUACHUA ADD CHECK(TongTien >= 0)
+ALTER TABLE PHIEUSUACHUA ADD CHECK(DaThu >= 0)
+ALTER TABLE CT_PHIEUSUACHUA ADD CHECK(TienCong >= 0)
+ALTER TABLE CT_PHIEUSUACHUA ADD CHECK(SoLuong >= 0)
+ALTER TABLE CT_PHIEUSUACHUA ADD CHECK(DonGia >= 0)
+ALTER TABLE CT_PHIEUSUACHUA ADD CHECK(ThanhTien >= 0)
+ALTER TABLE PHUTUNG ADD CHECK(DonGiaNhap >= 0)
+ALTER TABLE PHUTUNG ADD CHECK(DonGiaBan >= 0)
+ALTER TABLE PHIEUNHAPPHUTUNG ADD CHECK(TongTien >= 0)
+ALTER TABLE CT_PHIEUNHAPPHUTUNG ADD CHECK(SoLuongNhap >= 0)
+ALTER TABLE CT_PHIEUNHAPPHUTUNG ADD CHECK(DonGiaNhap >= 0)
+ALTER TABLE CT_PHIEUNHAPPHUTUNG ADD CHECK(ThanhTien >= 0)
+ALTER TABLE CT_BAOCAOTON ADD CHECK(Thang between 1 and 12)
+ALTER TABLE CT_BAOCAOTON ADD CHECK(Nam > 0)
+ALTER TABLE CT_BAOCAOTON ADD CHECK(TonDau >= 0)
+ALTER TABLE CT_BAOCAOTON ADD CHECK(PhatSinh >= 0)
+ALTER TABLE CT_BAOCAOTON ADD CHECK(TonCuoi >= 0)
+
+-- NGUOIDUNG → NHOMNGUOIDUNG
+ALTER TABLE NGUOIDUNG
+ADD CONSTRAINT FK_NGUOIDUNG_NHOMNGUOIDUNG
+FOREIGN KEY (MaNhomND) REFERENCES NHOMNGUOIDUNG(MaNhomND);
+
+-- PHANQUYEN → NHOMNGUOIDUNG
+ALTER TABLE PHANQUYEN
+ADD CONSTRAINT FK_PHANQUYEN_NHOMNGUOIDUNG
+FOREIGN KEY (MaNhomND) REFERENCES NHOMNGUOIDUNG(MaNhomND);
+
+-- PHANQUYEN → CHUCNANG
+ALTER TABLE PHANQUYEN
+ADD CONSTRAINT FK_PHANQUYEN_CHUCNANG
+FOREIGN KEY (MaChucNang) REFERENCES CHUCNANG(MaChucNang);
+
+-- XE → HIEUXE
+ALTER TABLE XE
+ADD CONSTRAINT FK_XE_HIEUXE
+FOREIGN KEY (HieuXe) REFERENCES HIEUXE(HieuXe);
+
+-- PHIEUSUACHUA → XE
+ALTER TABLE PHIEUSUACHUA
+ADD CONSTRAINT FK_PHIEUSUACHUA_XE
+FOREIGN KEY (BienSo) REFERENCES XE(BienSo);
+
+-- CT_PHIEUSUACHUA → PHIEUSUACHUA
+ALTER TABLE CT_PHIEUSUACHUA
+ADD CONSTRAINT FK_CT_PHIEUSUACHUA_PHIEUSUACHUA
+FOREIGN KEY (MaPhieuSC) REFERENCES PHIEUSUACHUA(MaPhieuSC);
+
+-- CT_PHIEUSUACHUA → PHUTUNG
+ALTER TABLE CT_PHIEUSUACHUA
+ADD CONSTRAINT FK_CT_PHIEUSUACHUA_PHUTUNG
+FOREIGN KEY (MaPhuTung) REFERENCES PHUTUNG(MaPhuTung);
+
+-- CT_PHIEUSUACHUA → NOIDUNGSUACHUA
+ALTER TABLE CT_PHIEUSUACHUA
+ADD CONSTRAINT FK_CT_PHIEUSUACHUA_NOIDUNGSUACHUA
+FOREIGN KEY (MaNoiDung) REFERENCES NOIDUNGSUACHUA(MaNoiDung);
+
+-- PHIEUTHUTIEN → XE
+ALTER TABLE PHIEUTHUTIEN
+ADD CONSTRAINT FK_PHIEUTHUTIEN_XE
+FOREIGN KEY (BienSo) REFERENCES XE(BienSo);
+
+-- CT_DOANHSO → DOANHSO
+ALTER TABLE CT_DOANHSO
+ADD CONSTRAINT FK_CT_DOANHSO_DOANHSO
+FOREIGN KEY (MaBCDS) REFERENCES DOANHSO(MaBCDS);
+
+-- CT_DOANHSO → HIEUXE
+ALTER TABLE CT_DOANHSO
+ADD CONSTRAINT FK_CT_DOANHSO_HIEUXE
+FOREIGN KEY (HieuXe) REFERENCES HIEUXE(HieuXe);
+
+-- CT_PHIEUNHAPPHUTUNG → PHIEUNHAPPHUTUNG
+ALTER TABLE CT_PHIEUNHAPPHUTUNG
+ADD CONSTRAINT FK_CT_PHIEUNHAPPHUTUNG_PHIEUNHAPPHUTUNG
+FOREIGN KEY (MaPhieuNhap) REFERENCES PHIEUNHAPPHUTUNG(MaPhieuNhap);
+
+-- CT_PHIEUNHAPPHUTUNG → PHUTUNG
+ALTER TABLE CT_PHIEUNHAPPHUTUNG
+ADD CONSTRAINT FK_CT_PHIEUNHAPPHUTUNG_PHUTUNG
+FOREIGN KEY (MaPhuTung) REFERENCES PHUTUNG(MaPhuTung);
+
+-- CT_BAOCAOTON → PHUTUNG
+ALTER TABLE CT_BAOCAOTON
+ADD CONSTRAINT FK_CT_BAOCAOTON_PHUTUNG
+FOREIGN KEY (MaPhuTung) REFERENCES PHUTUNG(MaPhuTung);
+
+ALTER DATABASE QUANLYGARA SET AUTO_CLOSE OFF;
+ALTER DATABASE QUANLYGARA SET AUTO_SHRINK OFF;
