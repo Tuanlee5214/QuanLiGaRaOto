@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -44,15 +44,6 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(58)))), ((int)(((byte)(95)))));
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(1, 1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(566, 63);
-            this.panel1.TabIndex = 1;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -65,6 +56,15 @@
             this.label1.Size = new System.Drawing.Size(532, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "THÔNG TIN TÀI KHOẢN HIỆN TẠI";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(58)))), ((int)(((byte)(95)))));
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(1, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(566, 63);
+            this.panel1.TabIndex = 1;
             // 
             // textBox1
             // 
@@ -162,6 +162,7 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "Cập nhật thông tin";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.OpenUpdateWin);
             // 
             // button2
             // 
@@ -171,6 +172,7 @@
             this.button2.TabIndex = 11;
             this.button2.Text = "Đổi mật khẩu ";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.ChangPass_Click);
             // 
             // button3
             // 
@@ -180,6 +182,7 @@
             this.button3.TabIndex = 12;
             this.button3.Text = "Thoát";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.InfoClose_Click);
             // 
             // UserInfoWindow
             // 
@@ -199,6 +202,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel1);
             this.Name = "UserInfoWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserInfoWindow";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -209,8 +213,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;

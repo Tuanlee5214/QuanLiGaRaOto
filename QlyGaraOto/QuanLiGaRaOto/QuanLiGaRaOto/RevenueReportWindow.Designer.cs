@@ -36,8 +36,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.HieuXe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +44,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -140,31 +140,6 @@
             this.numericUpDown2.Size = new System.Drawing.Size(138, 25);
             this.numericUpDown2.TabIndex = 3;
             // 
-            // button2
-            // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Image = global::QuanLiGaRaOto.Properties.Resources.icons8_file_301;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(657, 26);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 39);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Xuất file";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Image = global::QuanLiGaRaOto.Properties.Resources.icons8_report_30;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(510, 26);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 39);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Hiện báo cáo";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -231,6 +206,32 @@
             this.button3.TabIndex = 7;
             this.button3.Text = "Thoát";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.ExitRev_Click);
+            // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Image = global::QuanLiGaRaOto.Properties.Resources.icons8_file_301;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(647, 26);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(95, 39);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Xuất file";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Image = global::QuanLiGaRaOto.Properties.Resources.icons8_report_30;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(489, 26);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(123, 39);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Hiện báo cáo";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // RevenueReportWindow
             // 
@@ -245,6 +246,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Name = "RevenueReportWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RevenueReport";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

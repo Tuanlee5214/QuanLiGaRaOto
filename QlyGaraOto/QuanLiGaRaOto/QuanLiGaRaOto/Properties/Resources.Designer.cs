@@ -153,9 +153,39 @@ namespace QuanLiGaRaOto.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8__net_framework_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-.net-framework-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_c_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-c-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_car_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-car-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_contact_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-contact-100", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -246,6 +276,86 @@ namespace QuanLiGaRaOto.Properties {
         internal static System.Drawing.Bitmap icons8_search_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-search-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_sql_server_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-sql-server-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_sql_server_201 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-sql-server-201", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_sql_server_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-sql-server-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_sql_server_301 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-sql-server-301", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_sql_server_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-sql-server-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_sql_server_481 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-sql-server-481", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_sql_server_482 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-sql-server-482", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_sql_server_483 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-sql-server-483", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLiGaRaOto
 {
-    public partial class RevenueReportWindow : Form
+    public partial class SoftWareInfoWindow : Form
     {
-        public RevenueReportWindow()
+        public SoftWareInfoWindow()
         {
             InitializeComponent();
         }
@@ -22,19 +22,19 @@ namespace QuanLiGaRaOto
 
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ExitRev_Click(object sender, EventArgs e)
+        private void CloseInfoSoftware(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

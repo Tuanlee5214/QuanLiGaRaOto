@@ -108,5 +108,23 @@ namespace QuanLiGaRaOto
                 this.Close();
             }
         }
+
+        private void OpenQuantityReport(object sender, EventArgs e)
+        {
+            QuatityReport qr = new QuatityReport();
+            qr.Show();
+        }
+
+        private void OpenSoftWareInfo(object sender, EventArgs e)
+        {
+            SoftWareInfoWindow sw = new SoftWareInfoWindow();
+            sw.Show();
+        }
+
+        private void OpenContactWindow(object sender, EventArgs e)
+        {
+            ContactWindow ct = new ContactWindow();
+            ct.Show();
+        }
     }
 }

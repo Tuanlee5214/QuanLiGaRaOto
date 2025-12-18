@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePass.Designer.cs">
+      <DependentUpon>ChangePass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContactWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContactWindow.Designer.cs">
+      <DependentUpon>ContactWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,11 +72,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuatityReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuatityReport.Designer.cs">
+      <DependentUpon>QuatityReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="RevenueReportWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RevenueReportWindow.Designer.cs">
       <DependentUpon>RevenueReportWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SoftWareInfoWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SoftWareInfoWindow.Designer.cs">
+      <DependentUpon>SoftWareInfoWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateUserWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateUserWindow.Designer.cs">
+      <DependentUpon>UpdateUserWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="UserInfoWindow.cs">
       <SubType>Form</SubType>
@@ -72,6 +102,12 @@
     <Compile Include="UserInfoWindow.Designer.cs">
       <DependentUpon>UserInfoWindow.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ChangePass.resx">
+      <DependentUpon>ChangePass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContactWindow.resx">
+      <DependentUpon>ContactWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginWindow.resx">
       <DependentUpon>LoginWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -88,8 +124,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="QuatityReport.resx">
+      <DependentUpon>QuatityReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RevenueReportWindow.resx">
       <DependentUpon>RevenueReportWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SoftWareInfoWindow.resx">
+      <DependentUpon>SoftWareInfoWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateUserWindow.resx">
+      <DependentUpon>UpdateUserWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInfoWindow.resx">
       <DependentUpon>UserInfoWindow.cs</DependentUpon>
@@ -226,6 +271,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-file-301.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sql-server-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sql-server-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sql-server-481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sql-server-482.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sql-server-201.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sql-server-483.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sql-server-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sql-server-301.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-.net-framework-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-c-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-contact-100.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

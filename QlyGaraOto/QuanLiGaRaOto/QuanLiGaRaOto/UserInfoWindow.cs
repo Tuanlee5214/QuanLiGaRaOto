@@ -16,5 +16,22 @@ namespace QuanLiGaRaOto
         {
             InitializeComponent();
         }
+
+        private void InfoClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ChangPass_Click(object sender, EventArgs e)
+        {
+            ChangePass cb = new ChangePass();
+            cb.Show();
+        }
+
+        private void OpenUpdateWin(object sender, EventArgs e)
+        {
+            UpdateUserWindow ud = new UpdateUserWindow();
+            ud.Show();
+        }
     }
 }
