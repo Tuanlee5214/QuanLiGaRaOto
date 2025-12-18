@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCarWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCarWindow.Designer.cs">
+      <DependentUpon>AddCarWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChangePass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,12 @@
     <Compile Include="QuatityReport.Designer.cs">
       <DependentUpon>QuatityReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReceiptWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceiptWindow.Designer.cs">
+      <DependentUpon>ReceiptWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="RevenueReportWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +114,9 @@
     <Compile Include="UserInfoWindow.Designer.cs">
       <DependentUpon>UserInfoWindow.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddCarWindow.resx">
+      <DependentUpon>AddCarWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChangePass.resx">
       <DependentUpon>ChangePass.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +141,9 @@
     </Compile>
     <EmbeddedResource Include="QuatityReport.resx">
       <DependentUpon>QuatityReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReceiptWindow.resx">
+      <DependentUpon>ReceiptWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RevenueReportWindow.resx">
       <DependentUpon>RevenueReportWindow.cs</DependentUpon>
