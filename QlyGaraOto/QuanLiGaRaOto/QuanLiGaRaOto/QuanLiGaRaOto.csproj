@@ -64,6 +64,24 @@
     <Compile Include="ContactWindow.Designer.cs">
       <DependentUpon>ContactWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="ContentRepairListWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContentRepairListWindow.Designer.cs">
+      <DependentUpon>ContentRepairListWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HieuXeWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HieuXeWindow.Designer.cs">
+      <DependentUpon>HieuXeWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportOrder.Designer.cs">
+      <DependentUpon>ImportOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +93,12 @@
     </Compile>
     <Compile Include="MainWindoww.Designer.cs">
       <DependentUpon>MainWindoww.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaxCarADay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaxCarADay.Designer.cs">
+      <DependentUpon>MaxCarADay.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,6 +114,12 @@
     <Compile Include="ReceiptWindow.Designer.cs">
       <DependentUpon>ReceiptWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="RepairForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RepairForm.Designer.cs">
+      <DependentUpon>RepairForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="RevenueReportWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +131,12 @@
     </Compile>
     <Compile Include="SoftWareInfoWindow.Designer.cs">
       <DependentUpon>SoftWareInfoWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TiLeLaiWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TiLeLaiWindow.Designer.cs">
+      <DependentUpon>TiLeLaiWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="UpdateUserWindow.cs">
       <SubType>Form</SubType>
@@ -114,6 +150,12 @@
     <Compile Include="UserInfoWindow.Designer.cs">
       <DependentUpon>UserInfoWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="VTPTListWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VTPTListWindow.Designer.cs">
+      <DependentUpon>VTPTListWindow.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddCarWindow.resx">
       <DependentUpon>AddCarWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,11 +165,23 @@
     <EmbeddedResource Include="ContactWindow.resx">
       <DependentUpon>ContactWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ContentRepairListWindow.resx">
+      <DependentUpon>ContentRepairListWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HieuXeWindow.resx">
+      <DependentUpon>HieuXeWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportOrder.resx">
+      <DependentUpon>ImportOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginWindow.resx">
       <DependentUpon>LoginWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindoww.resx">
       <DependentUpon>MainWindoww.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaxCarADay.resx">
+      <DependentUpon>MaxCarADay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -145,17 +199,26 @@
     <EmbeddedResource Include="ReceiptWindow.resx">
       <DependentUpon>ReceiptWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RepairForm.resx">
+      <DependentUpon>RepairForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RevenueReportWindow.resx">
       <DependentUpon>RevenueReportWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SoftWareInfoWindow.resx">
       <DependentUpon>SoftWareInfoWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TiLeLaiWindow.resx">
+      <DependentUpon>TiLeLaiWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UpdateUserWindow.resx">
       <DependentUpon>UpdateUserWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInfoWindow.resx">
       <DependentUpon>UserInfoWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VTPTListWindow.resx">
+      <DependentUpon>VTPTListWindow.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -322,6 +385,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-contact-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-30.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

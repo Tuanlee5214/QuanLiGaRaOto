@@ -138,5 +138,47 @@ namespace QuanLiGaRaOto
             ReceiptWindow rc = new ReceiptWindow();
             rc.Show();
         }
+
+        private void OpenRepairForm(object sender, EventArgs e)
+        {
+            RepairForm rp = new RepairForm();
+            rp.Show();
+        }
+
+        private void OpenImportOrder(object sender, EventArgs e)
+        {
+            ImportOrder ip = new ImportOrder();
+            ip.Show();
+        }
+
+        private void OpenVTPTListWindow(object sender, EventArgs e)
+        {
+            VTPTListWindow vt = new VTPTListWindow();
+            vt.Show();
+        }
+
+        private void OpenContentRepairWin(object sender, EventArgs e)
+        {
+            ContentRepairListWindow cr = new ContentRepairListWindow();
+            cr.Show();
+        }
+
+        private void OpenHieuXeWin(object sender, EventArgs e)
+        {
+            HieuXeWindow hx = new HieuXeWindow();
+            hx.Show();
+        }
+
+        private void OpenMaxCarADay(object sender, EventArgs e)
+        {
+            MaxCarADay mc = new MaxCarADay();
+            mc.Show();
+        }
+
+        private void OpenTiLeLaiWin(object sender, EventArgs e)
+        {
+            TiLeLaiWindow tl = new TiLeLaiWindow();
+            tl.Show();
+        }
     }
 }
