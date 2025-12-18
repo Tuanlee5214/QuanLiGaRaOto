@@ -30,8 +30,8 @@ namespace QuanLiGaRaOto
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -176,13 +176,15 @@ namespace QuanLiGaRaOto
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
             this.toolStripMenuItem7.Size = new System.Drawing.Size(202, 22);
             this.toolStripMenuItem7.Text = "Xem thông tin tài khoản";
+            this.toolStripMenuItem7.Click += new System.EventHandler(this.OpenUserInfo_Click);
             // 
             // toolStripMenuItem8
             // 
             this.toolStripMenuItem8.Image = global::QuanLiGaRaOto.Properties.Resources.logout;
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(202, 22);
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(206, 26);
             this.toolStripMenuItem8.Text = "Đăng xuất";
+            this.toolStripMenuItem8.Click += new System.EventHandler(this.LogOut_Click);
             // 
             // báoCáoThốngKếToolStripMenuItem
             // 
@@ -200,14 +202,15 @@ namespace QuanLiGaRaOto
             // 
             this.toolStripMenuItem1.Image = global::QuanLiGaRaOto.Properties.Resources.cost;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(174, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(184, 26);
             this.toolStripMenuItem1.Text = "Báo cáo doanh thu";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.RevenueReport_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Image = global::QuanLiGaRaOto.Properties.Resources.warehouse;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(174, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(184, 26);
             this.toolStripMenuItem2.Text = "Báo cáo tồn kho ";
             // 
             // nghiệpVụỨngDụngToolStripMenuItem
@@ -377,6 +380,7 @@ namespace QuanLiGaRaOto
             this.textBox9.ReadOnly = true;
             this.textBox9.Size = new System.Drawing.Size(134, 20);
             this.textBox9.TabIndex = 9;
+            this.textBox9.TabStop = false;
             // 
             // label11
             // 
@@ -497,16 +501,16 @@ namespace QuanLiGaRaOto
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -806,6 +810,7 @@ namespace QuanLiGaRaOto
             this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(256, 23);
             this.textBox7.TabIndex = 9;
+            this.textBox7.TabStop = false;
             // 
             // label4
             // 
@@ -853,6 +858,7 @@ namespace QuanLiGaRaOto
             this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(256, 23);
             this.textBox6.TabIndex = 5;
+            this.textBox6.TabStop = false;
             // 
             // textBox5
             // 
@@ -865,6 +871,7 @@ namespace QuanLiGaRaOto
             this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(256, 23);
             this.textBox5.TabIndex = 4;
+            this.textBox5.TabStop = false;
             // 
             // textBox4
             // 
@@ -877,6 +884,7 @@ namespace QuanLiGaRaOto
             this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(256, 23);
             this.textBox4.TabIndex = 3;
+            this.textBox4.TabStop = false;
             // 
             // textBox3
             // 
@@ -889,6 +897,7 @@ namespace QuanLiGaRaOto
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(256, 23);
             this.textBox3.TabIndex = 2;
+            this.textBox3.TabStop = false;
             // 
             // textBox2
             // 
@@ -901,6 +910,7 @@ namespace QuanLiGaRaOto
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(256, 23);
             this.textBox2.TabIndex = 1;
+            this.textBox2.TabStop = false;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox1
@@ -914,6 +924,7 @@ namespace QuanLiGaRaOto
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(256, 23);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TabStop = false;
             // 
             // MainWindoww
             // 

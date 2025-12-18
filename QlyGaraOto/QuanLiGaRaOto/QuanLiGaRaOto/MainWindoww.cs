@@ -86,5 +86,27 @@ namespace QuanLiGaRaOto
         {
 
         }
+
+        private void OpenUserInfo_Click(object sender, EventArgs e)
+        {
+            UserInfoWindow user = new UserInfoWindow();
+            user.Show();
+        }
+
+        private void RevenueReport_Click(object sender, EventArgs e)
+        {
+            RevenueReportWindow rvn = new RevenueReportWindow();
+            rvn.Show();
+        }
+
+        private void LogOut_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất!", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+            if (result == DialogResult.OK)
+            {
+                this.Close();
+            }
+        }
     }
 }

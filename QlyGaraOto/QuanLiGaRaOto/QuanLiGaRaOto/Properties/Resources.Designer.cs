@@ -183,6 +183,16 @@ namespace QuanLiGaRaOto.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_file_301 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-file-301", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_list_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-list-30", resourceCulture);
@@ -196,6 +206,16 @@ namespace QuanLiGaRaOto.Properties {
         internal static System.Drawing.Bitmap icons8_person_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-person-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_report_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-report-30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
