@@ -126,5 +126,17 @@ namespace QuanLiGaRaOto
             ContactWindow ct = new ContactWindow();
             ct.Show();
         }
+
+        private void OpenAddCar(object sender, EventArgs e)
+        {
+            AddCarWindow ac = new AddCarWindow();
+            ac.Show();
+        }
+
+        private void OpenReceiptForm(object sender, EventArgs e)
+        {
+            ReceiptWindow rc = new ReceiptWindow();
+            rc.Show();
+        }
     }
 }

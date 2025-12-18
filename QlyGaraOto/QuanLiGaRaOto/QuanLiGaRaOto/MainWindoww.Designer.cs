@@ -124,7 +124,7 @@ namespace QuanLiGaRaOto
             this.panel1.Location = new System.Drawing.Point(0, 28);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1155, 45);
+            this.panel1.Size = new System.Drawing.Size(1246, 45);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -154,7 +154,7 @@ namespace QuanLiGaRaOto
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1155, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1246, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -175,7 +175,7 @@ namespace QuanLiGaRaOto
             this.panel2.Location = new System.Drawing.Point(0, 73);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1155, 100);
+            this.panel2.Size = new System.Drawing.Size(1246, 100);
             this.panel2.TabIndex = 2;
             // 
             // textBox9
@@ -279,7 +279,7 @@ namespace QuanLiGaRaOto
             this.panel3.Location = new System.Drawing.Point(0, 173);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1155, 346);
+            this.panel3.Size = new System.Drawing.Size(1246, 346);
             this.panel3.TabIndex = 3;
             // 
             // dataGridView1
@@ -310,7 +310,7 @@ namespace QuanLiGaRaOto
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1155, 346);
+            this.dataGridView1.Size = new System.Drawing.Size(1246, 346);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -380,7 +380,7 @@ namespace QuanLiGaRaOto
             this.panel4.Location = new System.Drawing.Point(0, 379);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1155, 140);
+            this.panel4.Size = new System.Drawing.Size(1246, 140);
             this.panel4.TabIndex = 4;
             // 
             // groupBox2
@@ -396,7 +396,7 @@ namespace QuanLiGaRaOto
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(307, 140);
+            this.groupBox2.Size = new System.Drawing.Size(398, 140);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thao tác";
@@ -805,28 +805,30 @@ namespace QuanLiGaRaOto
             // 
             this.toolStripMenuItem3.Image = global::QuanLiGaRaOto.Properties.Resources.vehicle;
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(241, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(245, 26);
             this.toolStripMenuItem3.Text = "Tiếp nhận xe mới ";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.OpenAddCar);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Image = global::QuanLiGaRaOto.Properties.Resources.form;
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(241, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(245, 26);
             this.toolStripMenuItem4.Text = "Lập phiếu sửa chữa";
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Image = global::QuanLiGaRaOto.Properties.Resources.application;
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(241, 22);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(245, 26);
             this.toolStripMenuItem5.Text = "Lập phiếu thu tiền ";
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.OpenReceiptForm);
             // 
             // toolStripMenuItem6
             // 
             this.toolStripMenuItem6.Image = global::QuanLiGaRaOto.Properties.Resources.questionnaire;
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(241, 22);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(245, 26);
             this.toolStripMenuItem6.Text = "Lập phiếu nhập vật tư phụ tùng";
             // 
             // quảnLíToolStripMenuItem
@@ -917,7 +919,7 @@ namespace QuanLiGaRaOto
             // 
             this.toolStripMenuItem17.Image = global::QuanLiGaRaOto.Properties.Resources.computer;
             this.toolStripMenuItem17.Name = "toolStripMenuItem17";
-            this.toolStripMenuItem17.Size = new System.Drawing.Size(191, 26);
+            this.toolStripMenuItem17.Size = new System.Drawing.Size(187, 22);
             this.toolStripMenuItem17.Text = "Thông tin phần mềm";
             this.toolStripMenuItem17.Click += new System.EventHandler(this.OpenSoftWareInfo);
             // 
@@ -925,7 +927,7 @@ namespace QuanLiGaRaOto
             // 
             this.toolStripMenuItem18.Image = global::QuanLiGaRaOto.Properties.Resources.phone_call;
             this.toolStripMenuItem18.Name = "toolStripMenuItem18";
-            this.toolStripMenuItem18.Size = new System.Drawing.Size(191, 26);
+            this.toolStripMenuItem18.Size = new System.Drawing.Size(187, 22);
             this.toolStripMenuItem18.Text = "Liên hệ ";
             this.toolStripMenuItem18.Click += new System.EventHandler(this.OpenContactWindow);
             // 
@@ -934,7 +936,7 @@ namespace QuanLiGaRaOto
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(244)))));
-            this.ClientSize = new System.Drawing.Size(1155, 519);
+            this.ClientSize = new System.Drawing.Size(1246, 519);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
