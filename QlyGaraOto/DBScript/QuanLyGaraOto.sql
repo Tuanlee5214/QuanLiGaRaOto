@@ -1,5 +1,6 @@
 ﻿CREATE DATABASE QUANLYGARA --Đã sửa chữa lại những lỗi sai (2)
-
+--Nhập đơn giá nhập, thì cập nhật trong bảng phụ tùng, cập nhật tồn kho và đơn giá nhập, 
+--đồng thời cập nhật giá bán theo tỉ lệ lợi nhuận.
 USE QUANLYGARA
 
 -- 1.NGUOIDUNG
@@ -120,12 +121,9 @@ CREATE TABLE PHUTUNG
 (
 	MaPhuTung char(7) primary key,
 	TenPhuTung nvarchar(50) not null,
-	LoaiPhuTung nvarchar(30) not null, 
-	NamSX int,
 	DonGiaNhap money,
 	DonGiaBan money, 
 	SoLuongTon int, 
-	NhaCungCap nvarchar(30) not null
 )
 
 -- 14.PHIEUNHAPPHUTUNG

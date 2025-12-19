@@ -10,22 +10,16 @@ using System.Windows.Forms;
 
 namespace QuanLiGaRaOto
 {
-    public partial class HieuXeWindow : Form
+    public partial class AddVTPT : Form
     {
-        public HieuXeWindow()
+        public AddVTPT()
         {
             InitializeComponent();
-        }   
-
-        private void CloseHieuXeWin(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
-        private void OpenAddHieuXe(object sender, EventArgs e)
+        private void Close(object sender, EventArgs e)
         {
-            AddHieuXe hx = new AddHieuXe();
-            hx.Show();
+            this.Close();
         }
     }
 }

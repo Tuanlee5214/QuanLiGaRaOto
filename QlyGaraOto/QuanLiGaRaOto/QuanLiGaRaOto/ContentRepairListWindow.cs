@@ -21,5 +21,17 @@ namespace QuanLiGaRaOto
         {
             this.Close();
         }
+
+        private void OpenUpdateContentRepair(object sender, EventArgs e)
+        {
+            UpdateContentRepair ud = new UpdateContentRepair();
+            ud.Show();
+        }
+
+        private void OpenAddContentRepair(object sender, EventArgs e)
+        {
+            AddConRepair ct = new AddConRepair();
+            ct.Show();
+        }
     }
 }
