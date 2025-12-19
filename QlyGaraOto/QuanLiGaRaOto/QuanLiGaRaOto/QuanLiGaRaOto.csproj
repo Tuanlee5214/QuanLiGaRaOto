@@ -64,6 +64,42 @@
     <Compile Include="AddHieuXe.Designer.cs">
       <DependentUpon>AddHieuXe.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListImportOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListImportOrder.Designer.cs">
+      <DependentUpon>ListImportOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListPTT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListPTT.Designer.cs">
+      <DependentUpon>ListPTT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListRepairForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListRepairForm.Designer.cs">
+      <DependentUpon>ListRepairForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PNKDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PNKDetail.Designer.cs">
+      <DependentUpon>PNKDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PSCDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSCDetail.Designer.cs">
+      <DependentUpon>PSCDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateCar.Designer.cs">
+      <DependentUpon>UpdateCar.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpdateContentRepair.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +230,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddHieuXe.resx">
       <DependentUpon>AddHieuXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListImportOrder.resx">
+      <DependentUpon>ListImportOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListPTT.resx">
+      <DependentUpon>ListPTT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListRepairForm.resx">
+      <DependentUpon>ListRepairForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PNKDetail.resx">
+      <DependentUpon>PNKDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PSCDetail.resx">
+      <DependentUpon>PSCDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateCar.resx">
+      <DependentUpon>UpdateCar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateContentRepair.resx">
       <DependentUpon>UpdateContentRepair.cs</DependentUpon>
@@ -433,6 +487,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-add-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-detail-30.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

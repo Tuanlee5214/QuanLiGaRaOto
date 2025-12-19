@@ -213,6 +213,16 @@ namespace QuanLiGaRaOto.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_detail_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-detail-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_file_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-file-30", resourceCulture);
