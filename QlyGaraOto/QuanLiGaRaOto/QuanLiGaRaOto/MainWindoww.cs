@@ -180,5 +180,29 @@ namespace QuanLiGaRaOto
             TiLeLaiWindow tl = new TiLeLaiWindow();
             tl.Show();
         }
+
+        private void OpenUpdateCar(object sender, EventArgs e)
+        {
+            UpdateCar ud = new UpdateCar();
+            ud.Show();
+        }
+
+        private void OpenListPSC(object sender, EventArgs e)
+        {
+            ListRepairForm ip = new ListRepairForm();
+            ip.Show();
+        }
+
+        private void OpenListImportOrder(object sender, EventArgs e)
+        {
+            ListImportOrder l = new ListImportOrder();
+            l.Show();
+        }
+
+        private void OpenListPTT(object sender, EventArgs e)
+        {
+            ListPTT L = new ListPTT();
+            L.Show();
+        }
     }
 }
