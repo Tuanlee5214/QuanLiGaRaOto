@@ -48,7 +48,7 @@
             this.label1.Location = new System.Drawing.Point(127, 18);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(337, 46);
+            this.label1.Size = new System.Drawing.Size(327, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "CẬP NHẬT TỈ LỆ LÃI";
             // 
@@ -112,6 +112,7 @@
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.panel1);
             this.Name = "TiLeLaiWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TiLeLaiWindow";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,15 +38,19 @@
             this.label8 = new System.Windows.Forms.Label();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.button6 = new System.Windows.Forms.Button();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.MaVTPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenVTPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DGNHAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -66,73 +66,6 @@
             this.button4.Text = "Thoát";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.CloseContentRepairWin);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Honeydew;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button3.Image = global::QuanLiGaRaOto.Properties.Resources.icons8_add_30;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(717, 541);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(288, 56);
-            this.button3.TabIndex = 40;
-            this.button3.Text = "Thêm nội dung sửa chữa";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Honeydew;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button5.Image = global::QuanLiGaRaOto.Properties.Resources.icons8_file_30;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(1046, 540);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(256, 57);
-            this.button5.TabIndex = 39;
-            this.button5.Text = "Xuất ra file chi tiết";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Honeydew;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::QuanLiGaRaOto.Properties.Resources.icons8_delete_30;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(1046, 612);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(256, 57);
-            this.button2.TabIndex = 38;
-            this.button2.Text = "Xóa thông tin nội dung";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Honeydew;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Image = global::QuanLiGaRaOto.Properties.Resources.icons8_update_30;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(717, 613);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(288, 56);
-            this.button1.TabIndex = 37;
-            this.button1.Text = "Cập nhật thông tin ";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
@@ -242,20 +175,6 @@
             this.radioButton1.Text = "Tìm theo mã nội dung";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.LightYellow;
-            this.button6.Enabled = false;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button6.Image = global::QuanLiGaRaOto.Properties.Resources.icons8_search_15;
-            this.button6.Location = new System.Drawing.Point(808, 94);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(65, 32);
-            this.button6.TabIndex = 33;
-            this.button6.UseVisualStyleBackColor = false;
-            // 
             // textBox8
             // 
             this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -289,6 +208,27 @@
             this.dataGridView1.Size = new System.Drawing.Size(1307, 336);
             this.dataGridView1.TabIndex = 30;
             // 
+            // MaVTPT
+            // 
+            this.MaVTPT.HeaderText = "Mã nội dung";
+            this.MaVTPT.MinimumWidth = 6;
+            this.MaVTPT.Name = "MaVTPT";
+            this.MaVTPT.Width = 350;
+            // 
+            // TenVTPT
+            // 
+            this.TenVTPT.HeaderText = "Tên nội dung";
+            this.TenVTPT.MinimumWidth = 6;
+            this.TenVTPT.Name = "TenVTPT";
+            this.TenVTPT.Width = 320;
+            // 
+            // DGNHAP
+            // 
+            this.DGNHAP.HeaderText = "Tiền công";
+            this.DGNHAP.MinimumWidth = 6;
+            this.DGNHAP.Name = "DGNHAP";
+            this.DGNHAP.Width = 300;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(58)))), ((int)(((byte)(95)))));
@@ -313,26 +253,87 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "DANH SÁCH NỘI DUNG SỬA CHỮA";
             // 
-            // MaVTPT
+            // button3
             // 
-            this.MaVTPT.HeaderText = "Mã nội dung";
-            this.MaVTPT.MinimumWidth = 6;
-            this.MaVTPT.Name = "MaVTPT";
-            this.MaVTPT.Width = 350;
+            this.button3.BackColor = System.Drawing.Color.Honeydew;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button3.Image = global::QuanLiGaRaOto.Properties.Resources.icons8_add_30;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(717, 541);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(288, 56);
+            this.button3.TabIndex = 40;
+            this.button3.Text = "Thêm nội dung sửa chữa";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.OpenAddContentRepair);
             // 
-            // TenVTPT
+            // button5
             // 
-            this.TenVTPT.HeaderText = "Tên nội dung";
-            this.TenVTPT.MinimumWidth = 6;
-            this.TenVTPT.Name = "TenVTPT";
-            this.TenVTPT.Width = 320;
+            this.button5.BackColor = System.Drawing.Color.Honeydew;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button5.Image = global::QuanLiGaRaOto.Properties.Resources.icons8_file_30;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(1046, 540);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(256, 57);
+            this.button5.TabIndex = 39;
+            this.button5.Text = "Xuất ra file chi tiết";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.UseVisualStyleBackColor = false;
             // 
-            // DGNHAP
+            // button2
             // 
-            this.DGNHAP.HeaderText = "Tiền công";
-            this.DGNHAP.MinimumWidth = 6;
-            this.DGNHAP.Name = "DGNHAP";
-            this.DGNHAP.Width = 300;
+            this.button2.BackColor = System.Drawing.Color.Honeydew;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::QuanLiGaRaOto.Properties.Resources.icons8_delete_30;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(1046, 612);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(256, 57);
+            this.button2.TabIndex = 38;
+            this.button2.Text = "Xóa thông tin nội dung";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Honeydew;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Image = global::QuanLiGaRaOto.Properties.Resources.icons8_update_30;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(717, 613);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(288, 56);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "Cập nhật thông tin ";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.OpenUpdateContentRepair);
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.LightYellow;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button6.Image = global::QuanLiGaRaOto.Properties.Resources.icons8_search_15;
+            this.button6.Location = new System.Drawing.Point(808, 94);
+            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(65, 32);
+            this.button6.TabIndex = 33;
+            this.button6.UseVisualStyleBackColor = false;
             // 
             // ContentRepairListWindow
             // 

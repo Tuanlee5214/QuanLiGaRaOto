@@ -52,6 +52,30 @@
     <Compile Include="AddCarWindow.Designer.cs">
       <DependentUpon>AddCarWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddConRepair.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddConRepair.Designer.cs">
+      <DependentUpon>AddConRepair.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddHieuXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddHieuXe.Designer.cs">
+      <DependentUpon>AddHieuXe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateContentRepair.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateContentRepair.Designer.cs">
+      <DependentUpon>UpdateContentRepair.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddVTPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddVTPT.Designer.cs">
+      <DependentUpon>AddVTPT.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChangePass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +168,12 @@
     <Compile Include="UpdateUserWindow.Designer.cs">
       <DependentUpon>UpdateUserWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateVTPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateVTPT.Designer.cs">
+      <DependentUpon>UpdateVTPT.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInfoWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +188,18 @@
     </Compile>
     <EmbeddedResource Include="AddCarWindow.resx">
       <DependentUpon>AddCarWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddConRepair.resx">
+      <DependentUpon>AddConRepair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddHieuXe.resx">
+      <DependentUpon>AddHieuXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateContentRepair.resx">
+      <DependentUpon>UpdateContentRepair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddVTPT.resx">
+      <DependentUpon>AddVTPT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChangePass.resx">
       <DependentUpon>ChangePass.cs</DependentUpon>
@@ -213,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateUserWindow.resx">
       <DependentUpon>UpdateUserWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateVTPT.resx">
+      <DependentUpon>UpdateVTPT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInfoWindow.resx">
       <DependentUpon>UserInfoWindow.cs</DependentUpon>

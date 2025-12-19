@@ -21,5 +21,17 @@ namespace QuanLiGaRaOto
         {
             this.Close();
         }
+
+        private void OpenUpdateVTPTWindow(object sender, EventArgs e)
+        {
+            UpdateVTPT ud = new UpdateVTPT();
+            ud.Show();
+        }
+
+        private void OpenAddVTPTWin(object sender, EventArgs e)
+        {
+            AddVTPT a = new AddVTPT();
+            a.Show();
+        }
     }
 }
