@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLiGaRaOto.Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,80 +13,14 @@ namespace QuanLiGaRaOto
 {
     public partial class MainWindoww : Form
     {
+        
         public MainWindoww()
         {
             InitializeComponent();
+            this.textBox9.Text = UserSession.CurrentUser.TenNguoiDung;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void báoCáoThốngKếToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void thôngTinTàiKhoảnHiệnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MainWindoww_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void OpenUserInfo_Click(object sender, EventArgs e)
         {
