@@ -19,7 +19,7 @@ namespace QuanLiGaRaOto
             InitializeComponent();
             this.textBox1.Text = UserSession.CurrentUser.TenDangNhap;
             this.textBox2.Text = UserSession.CurrentUser.TenNguoiDung;
-            this.textBox3.Text = UserSession.CurrentUser.NgaySinh.ToShortDateString();
+            this.textBox3.Text = UserSession.CurrentUser.NgaySinh.ToString("dd/MM/yyyy");
             this.comboBox1.DataSource = UserService.Instance.GetGroupInfo();
             this.comboBox1.DisplayMember = "TenNhomNguoiDung";
             this.comboBox1.ValueMember = "MaNhomND";

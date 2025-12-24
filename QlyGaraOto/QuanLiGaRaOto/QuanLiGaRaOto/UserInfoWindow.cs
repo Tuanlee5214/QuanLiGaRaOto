@@ -24,7 +24,7 @@ namespace QuanLiGaRaOto
         {
             textBox1.Text = UserSession.CurrentUser.TenDangNhap;
             textBox2.Text = UserSession.CurrentUser.TenNguoiDung;
-            textBox3.Text = UserSession.CurrentUser.NgaySinh.ToShortDateString();
+            textBox3.Text = UserSession.CurrentUser.NgaySinh.ToString("dd/MM/yyyy");
             textBox4.Text = UserSession.CurrentGroup.TenNhomNguoiDung;
         }
 
