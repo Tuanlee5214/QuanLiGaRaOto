@@ -44,6 +44,22 @@ namespace QuanLiGaRaOto.Service
             }
         }
 
+        public int GetCarInADay()
+        {
+            using (var conn = _db.GetConnection())
+            using (var cmd = conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT COUNT(BienSo) FROM XE WHERE NgayTiepNhan >= @today AND NgayTiepNhan < @tomorrow";
+                cmd.Parameters.Add("@today", SqlDbType.DateTime).Value = DateTime.Today;
+                cmd.Parameters.Add("@tomorrow", SqlDbType.DateTime).Value = DateTime.Today.AddDays(1);
+
+                var result = cmd.ExecuteScalar();
+                int CarInADay = Convert.ToInt32(result);
+                return CarInADay;
+            }
+        }
+
+
         public InsertOrUpdateResult AddCar(Car item)
         {
             try
@@ -75,7 +91,7 @@ namespace QuanLiGaRaOto.Service
                         return new InsertOrUpdateResult
                         {
                             Success = false,
-                            ErrorMessage = "Thêm thông tin thất bại"
+                            ErrorMessage = "Biển số xe đã tồn tại"
                         };
                     }
 

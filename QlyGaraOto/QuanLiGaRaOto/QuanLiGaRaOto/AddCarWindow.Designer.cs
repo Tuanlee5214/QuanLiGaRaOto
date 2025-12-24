@@ -123,7 +123,6 @@
             this.textBox4.Location = new System.Drawing.Point(223, 255);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(398, 29);
             this.textBox4.TabIndex = 17;
             this.textBox4.TabStop = false;
@@ -136,7 +135,6 @@
             this.textBox3.Location = new System.Drawing.Point(223, 176);
             this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(398, 29);
             this.textBox3.TabIndex = 16;
             this.textBox3.TabStop = false;
@@ -149,7 +147,6 @@
             this.textBox2.Location = new System.Drawing.Point(223, 138);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(398, 29);
             this.textBox2.TabIndex = 15;
             this.textBox2.TabStop = false;
@@ -206,7 +203,6 @@
             this.textBox1.Location = new System.Drawing.Point(223, 293);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(398, 29);
             this.textBox1.TabIndex = 27;
             this.textBox1.TabStop = false;
@@ -219,7 +215,6 @@
             this.textBox5.Location = new System.Drawing.Point(223, 331);
             this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(398, 29);
             this.textBox5.TabIndex = 28;
             this.textBox5.TabStop = false;
