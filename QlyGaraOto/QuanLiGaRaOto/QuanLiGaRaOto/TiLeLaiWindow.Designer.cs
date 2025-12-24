@@ -64,7 +64,13 @@
             // 
             // numericUpDown1
             // 
+            this.numericUpDown1.DecimalPlaces = 2;
             this.numericUpDown1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
             this.numericUpDown1.Location = new System.Drawing.Point(113, 95);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             1000,
@@ -106,6 +112,7 @@
             this.button1.TabIndex = 38;
             this.button1.Text = "Cập nhật thông tin";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.UpdateTiLeLai);
             // 
             // TiLeLaiWindow
             // 
@@ -120,6 +127,7 @@
             this.Name = "TiLeLaiWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TiLeLaiWindow";
+            this.Activated += new System.EventHandler(this.ActivateForm);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
