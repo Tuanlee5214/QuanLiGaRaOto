@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLiGaRaOto.Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,9 @@ namespace QuanLiGaRaOto
         public AddCarWindow()
         {
             InitializeComponent();
+            comboBox1.DataSource = CarService.Instance.GetTypeOfCarInfo();
+            comboBox1.DisplayMember = "HieuXe";
+            comboBox1.ValueMember = "HieuXe";
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -25,6 +29,11 @@ namespace QuanLiGaRaOto
         private void CloseAddCar(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void AddCarIntoSystem(object sender, EventArgs e)
+        {
+
         }
     }
 }

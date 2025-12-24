@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLiGaRaOto.Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace QuanLiGaRaOto
         public MaxCarADay()
         {
             InitializeComponent();
+            numericUpDown1.Value = RuleService.Instance.GetMaxCarOfDay();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -27,9 +29,25 @@ namespace QuanLiGaRaOto
             this.Close();
         }
 
-        private void MaxCarADay_Load(object sender, EventArgs e)
-        {
 
+
+        private void UpdateInfoMaxCar(object sender, EventArgs e)
+        {
+            int maxCar = (int)numericUpDown1.Value;
+            var result = RuleService.Instance.UpdateMaxCarOfDay(maxCar);
+            if(result.Success)
+            {
+                MessageBox.Show(result.SuccesMessage);
+            }
+            else
+            {
+                MessageBox.Show(result.ErrorMessage);
+            }
+        }
+
+        private void ActivateForm(object sender, EventArgs e)
+        {
+            numericUpDown1.Value = RuleService.Instance.GetMaxCarOfDay();
         }
     }
 }
