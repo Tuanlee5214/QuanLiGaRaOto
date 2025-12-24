@@ -16,7 +16,7 @@ namespace QuanLiGaRaOto
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindoww());
+            Application.Run(new LoginWindow());
         }
     }
 }

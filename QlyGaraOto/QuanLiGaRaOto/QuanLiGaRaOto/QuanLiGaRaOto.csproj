@@ -82,6 +82,8 @@
     <Compile Include="ListRepairForm.Designer.cs">
       <DependentUpon>ListRepairForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Group.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="PNKDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +96,10 @@
     <Compile Include="PSCDetail.Designer.cs">
       <DependentUpon>PSCDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Service\DatabaseConnection.cs" />
+    <Compile Include="Service\UserService.cs" />
+    <Compile Include="Service\PasswordHasher.cs" />
+    <Compile Include="Service\UserSession.cs" />
     <Compile Include="UpdateCar.cs">
       <SubType>Form</SubType>
     </Compile>

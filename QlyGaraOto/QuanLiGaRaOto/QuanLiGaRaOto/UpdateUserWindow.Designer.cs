@@ -63,6 +63,7 @@
             this.button1.TabIndex = 22;
             this.button1.Text = "Cập nhật thông tin";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.UpdateUserInfo);
             // 
             // label5
             // 
@@ -173,6 +174,9 @@
             // 
             this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Admin",
+            "Nhân viên"});
             this.comboBox1.Location = new System.Drawing.Point(231, 266);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
