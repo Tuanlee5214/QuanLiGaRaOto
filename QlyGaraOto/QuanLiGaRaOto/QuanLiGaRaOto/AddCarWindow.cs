@@ -21,6 +21,7 @@ namespace QuanLiGaRaOto
             comboBox1.DataSource = CarService.Instance.GetTypeOfCarInfo();
             comboBox1.DisplayMember = "HieuXe";
             comboBox1.ValueMember = "HieuXe";
+            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

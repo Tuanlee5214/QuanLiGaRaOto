@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using QuanLiGaRaOto.Model;
+using System.Windows.Forms;
+using System.ComponentModel;
 
 namespace QuanLiGaRaOto.Service
 {
@@ -59,6 +61,68 @@ namespace QuanLiGaRaOto.Service
             }
         }
 
+        public GetCarsResult GetCars(DateTime today, DateTime tomorrow)
+        {
+            try
+            {
+                using (var conn = _db.GetConnection())
+                using (var cmd = conn.CreateCommand())
+                {
+
+                    cmd.CommandText =
+                        "SELECT BienSo, HieuXe, TenChuXe, DiaChi, SDT, Email, NgayTiepNhan, TongNo " +
+                        "FROM XE WHERE NgayTiepNhan >= @today AND NgayTiepNhan < @tomorrow";
+
+                    cmd.Parameters.Add("@today", SqlDbType.DateTime).Value = today;
+                    cmd.Parameters.Add("@tomorrow", SqlDbType.DateTime).Value = tomorrow;
+
+                    var list = new BindingList<Car>();
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            list.Add(new Car
+                            {
+                                BienSo = reader["BienSo"].ToString(),
+                                HieuXe = reader["HieuXe"].ToString(),
+                                TenChuXe = reader["TenChuXe"].ToString(),
+                                DiaChi = reader["DiaChi"].ToString(),
+                                SDT = reader["SDT"].ToString(),
+                                Email = reader["Email"].ToString(),
+                                NgayTiepNhan = Convert.ToDateTime(reader["NgayTiepNhan"]),
+                                TongNo = Convert.ToDecimal(reader["TongNo"])
+                            });
+                        }
+                    }
+
+                    if (list.Count == 0)
+                    {
+                        return new GetCarsResult
+                        {
+                            Success = true,
+                            ListCar = list
+                        };
+                    }
+
+                    return new GetCarsResult
+                    {
+                        Success = true,
+                        ListCar = list
+                    };
+                }
+            }
+            catch (SqlException)
+            {
+                return new GetCarsResult
+                {
+                    Success = false,
+                    ErrorMessage = "Lỗi kết nối tới server"
+                };
+            }
+        }
+
+
 
         public InsertOrUpdateResult AddCar(Car item)
         {
@@ -108,8 +172,6 @@ namespace QuanLiGaRaOto.Service
                 };
             }
         }
-
-
     }
 
     public class InsertOrUpdateResult
@@ -117,5 +179,14 @@ namespace QuanLiGaRaOto.Service
         public bool Success { get; set; }
         public string SuccessMessage { get; set; }
         public string ErrorMessage { get; set; }
+    }
+
+    public class GetCarsResult
+    {
+        public bool Success { get; set; }
+        public string ErrorMessage { get; set; }
+        public string SuccessMessage { get; set; }
+
+        public BindingList<Car> ListCar;
     }
 }

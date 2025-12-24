@@ -18,6 +18,9 @@ namespace QuanLiGaRaOto
         {
             InitializeComponent();
             this.textBox9.Text = UserSession.CurrentUser.TenNguoiDung;
+            var fday = new DateTime(2000, 1, 1, 0, 0, 0);
+            var sday = new DateTime(2100, 1, 1, 0, 0, 0);
+            dataGridView1.DataSource = CarService.Instance.GetCars(fday, sday).ListCar;
         }
 
         
@@ -138,6 +141,52 @@ namespace QuanLiGaRaOto
         {
             ListPTT L = new ListPTT();
             L.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ActivateForm(object sender, EventArgs e)
+        {
+            var fday = new DateTime(2000, 1, 1, 0, 0, 0);
+            var sday = new DateTime(2100, 1, 1, 0, 0, 0);
+            dataGridView1.DataSource = CarService.Instance.GetCars(fday, sday).ListCar;
+        }
+
+        private void GetCars(object sender, EventArgs e)
+        {
+            var fday = new DateTime(2000, 1, 1, 0, 0, 0);
+            var sday = new DateTime(2100, 1, 1, 0, 0, 0);
+            dataGridView1.DataSource = CarService.Instance.GetCars(fday, sday).ListCar;
+        }
+
+        private void GetCarInADay(object sender, EventArgs e)
+        {
+            var fday = DateTime.Today;
+            var sday = DateTime.Today.AddDays(1);
+            dataGridView1.DataSource = CarService.Instance.GetCars(fday, sday).ListCar;
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return; 
+
+            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+            textBox1.Text = row.Cells["BienSo"].Value?.ToString();
+            textBox2.Text = row.Cells["HieuXe"].Value?.ToString();
+            textBox4.Text = row.Cells["TenChuXe"].Value?.ToString();
+            textBox5.Text = row.Cells["DiaChi"].Value?.ToString();
+            textBox3.Text = row.Cells["SDT"].Value?.ToString();
+            textBox6.Text = row.Cells["Email"].Value?.ToString();
+
+            if (row.Cells["NgayTiepNhan"].Value != null)
+                dateTimePicker1.Value = (DateTime)row.Cells["NgayTiepNhan"].Value;
+
+            if (row.Cells["TongNo"].Value != null)
+                textBox7.Text = row.Cells["TongNo"].Value.ToString();
         }
     }
 }
