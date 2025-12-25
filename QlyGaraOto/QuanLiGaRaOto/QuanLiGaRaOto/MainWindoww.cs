@@ -121,7 +121,22 @@ namespace QuanLiGaRaOto
 
         private void OpenUpdateCar(object sender, EventArgs e)
         {
-            UpdateCar ud = new UpdateCar();
+            string a;
+            a = this.textBox2.Text;
+            UpdateCar ud = new UpdateCar(a);
+            ud.textBox1.Text = this.textBox1.Text;
+            ud.textBox2.Text = this.textBox4.Text;
+            ud.textBox3.Text = this.textBox5.Text;
+            ud.textBox4.Text = this.textBox3.Text.Trim();
+            ud.textBox5.Text = this.textBox6.Text;
+            if (string.IsNullOrWhiteSpace(ud.textBox1.Text) || string.IsNullOrWhiteSpace(ud.textBox2.Text) ||
+               string.IsNullOrWhiteSpace(ud.textBox3.Text) || string.IsNullOrWhiteSpace(ud.textBox4.Text) ||
+               string.IsNullOrWhiteSpace(ud.textBox5.Text))
+            {
+                MessageBox.Show("Vui lòng chọn thông tin xe", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
+
             ud.Show();
         }
 

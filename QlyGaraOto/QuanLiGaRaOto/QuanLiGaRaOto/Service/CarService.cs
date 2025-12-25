@@ -122,7 +122,52 @@ namespace QuanLiGaRaOto.Service
             }
         }
 
+        public InsertOrUpdateResult UpdateCar(Car item)
+        {
+            try
+            {
+                using (var conn = _db.GetConnection())
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "UPDATE XE SET TenChuXe = @tcx, HieuXe = @hx, DiaChi = @dc, SDT = @sdt, Email = @email WHERE BienSo = @bs";
+                    cmd.Parameters.Add("@hx", SqlDbType.VarChar, 30).Value = item.HieuXe;
+                    cmd.Parameters.Add("@tcx", SqlDbType.NVarChar, 50).Value = item.TenChuXe;
+                    cmd.Parameters.Add("@dc", SqlDbType.NVarChar, 200).Value = item.DiaChi;
+                    cmd.Parameters.Add("@sdt", SqlDbType.Char, 20).Value = item.SDT;
+                    cmd.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = item.Email;
+                    cmd.Parameters.Add("@bs", SqlDbType.Char, 20).Value = item.BienSo;
 
+                    int row = cmd.ExecuteNonQuery();
+                    if (row != 0)
+                    {
+                        return new InsertOrUpdateResult
+                        {
+                            Success = true,
+                            SuccessMessage = "Cập nhật thông tin thành công"
+                        };
+                    }
+                    else
+                    {
+                        return new InsertOrUpdateResult
+                        {
+                            Success = false,
+                            ErrorMessage = "Cập nhật thông tin thất bại"
+                        };
+                    }
+
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("SQL Error: " + ex.Message);
+                return new InsertOrUpdateResult
+                {
+                    Success = false,
+                    ErrorMessage = "Lỗi kết nối tới máy chủ"
+                };
+            }
+        }
 
         public InsertOrUpdateResult AddCar(Car item)
         {
