@@ -154,6 +154,7 @@
     </Compile>
     <Compile Include="Service\CarService.cs" />
     <Compile Include="Service\DatabaseConnection.cs" />
+    <Compile Include="Service\PhieuThuTien.cs" />
     <Compile Include="Service\RepairFormService.cs" />
     <Compile Include="Service\RuleService.cs" />
     <Compile Include="Service\UserService.cs" />

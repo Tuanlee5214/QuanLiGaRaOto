@@ -192,7 +192,7 @@ namespace QuanLiGaRaOto
             decimal tiennocu = RepairFormService.Instance.GetCarInfo(bienso).TongNo;
             decimal tiennomoi = tiennocu + tongno;
             var result = RepairFormService.Instance.UpdateTienNoMoi(bienso, tiennomoi);
-            if (result.Success) MessageBox.Show(result.SuccessMessage);
+            if (result.Success) MessageBox.Show("Thêm thông tin thành công");
             this.Close();
         }
     }

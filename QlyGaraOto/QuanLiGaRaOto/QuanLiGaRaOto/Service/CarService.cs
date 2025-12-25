@@ -122,6 +122,47 @@ namespace QuanLiGaRaOto.Service
             }
         }
 
+        public Car GetCarFromBienSo(string BienSo)
+        {
+                using (var conn = _db.GetConnection())
+                using (var cmd = conn.CreateCommand())
+                {
+
+                    cmd.CommandText =
+                        "SELECT BienSo, HieuXe, TenChuXe, DiaChi, SDT, Email, NgayTiepNhan, TongNo " +
+                        "FROM XE WHERE BienSo = @bs";
+
+                    cmd.Parameters.Add("@bs", SqlDbType.Char, 20).Value = BienSo;
+
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new Car
+                            {
+                                BienSo = reader["BienSo"].ToString(),
+                                HieuXe = reader["HieuXe"].ToString(),
+                                TenChuXe = reader["TenChuXe"].ToString(),
+                                DiaChi = reader["DiaChi"].ToString(),
+                                SDT = reader["SDT"].ToString(),
+                                Email = reader["Email"].ToString(),
+                                NgayTiepNhan = Convert.ToDateTime(reader["NgayTiepNhan"]),
+                                TongNo = Convert.ToDecimal(reader["TongNo"])
+                            };
+                        }
+                        else
+                        {
+                            return new Car();
+                        }
+                    
+                    }
+                    
+                }
+            
+            
+        }
+
         public InsertOrUpdateResult UpdateCar(Car item)
         {
             try
