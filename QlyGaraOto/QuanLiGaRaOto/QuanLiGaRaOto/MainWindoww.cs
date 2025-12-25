@@ -1,5 +1,6 @@
 ﻿using QuanLiGaRaOto.Service;
 using System;
+using ClosedXML.Excel;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -222,6 +223,81 @@ namespace QuanLiGaRaOto
                 else MessageBox.Show(result1.ErrorMessage);
             }
 
+        }
+
+        private void ExportFIle(object sender, EventArgs e)
+        {
+            using (SaveFileDialog sfd = new SaveFileDialog())
+            {
+                sfd.Filter = "Excel Files|*.xlsx";
+                sfd.Title = "Xuất file Excel";
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    ExportDataGridViewToExcel(dataGridView1, sfd.FileName);
+                    MessageBox.Show("Xuất Excel thành công");
+                }
+            }
+
+        }
+
+        private void ExportDataGridViewToExcel(DataGridView dgv, string filePath)
+        {
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                var ws = wb.Worksheets.Add("Danh sách xe");
+
+                // Header
+                for (int i = 0; i < dgv.Columns.Count; i++)
+                {
+                    ws.Cell(1, i + 1).Value = dgv.Columns[i].HeaderText;
+                    ws.Cell(1, i + 1).Style.Font.Bold = true;
+                }
+
+                // Data
+                for (int i = 0; i < dgv.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dgv.Columns.Count; j++)
+                    {
+                        ws.Cell(i + 2, j + 1).Value =
+                            dgv.Rows[i].Cells[j].Value?.ToString();
+                    }
+                }
+
+                ws.Columns().AdjustToContents();
+                wb.SaveAs(filePath);
+            }
+        }
+
+        private void SearchCar(object sender, EventArgs e)
+        {
+            int type = 0;
+            string searchText = textBox8.Text;
+            if(string.IsNullOrWhiteSpace(searchText))
+            {
+                MessageBox.Show("Thông tin tìm kiếm không được bỏ trống", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
+            
+
+            if (radioButton1.Checked) type = 1;
+            else if (radioButton2.Checked) type = 2;
+            else if (radioButton3.Checked) type = 3;
+            else if (radioButton4.Checked) type = 4;
+            if (type == 0)
+            {
+                MessageBox.Show("Vui lòng chọn kiểu tìm kiếm xe", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
+            var result = CarService.Instance.SearchCar(searchText, type);
+            if(result.Success)
+            {
+                dataGridView1.DataSource = result.ListCar;
+            }
+            else
+            {
+                MessageBox.Show(result.ErrorMessage);
+            }
         }
     }
 }
