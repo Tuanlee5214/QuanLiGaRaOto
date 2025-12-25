@@ -74,6 +74,14 @@ namespace QuanLiGaRaOto
             this.label10 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.BienSo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenChuXe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HieuXe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TongNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayTiepNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
@@ -98,14 +106,6 @@ namespace QuanLiGaRaOto
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.BienSo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenChuXe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HieuXe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TongNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayTiepNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -567,6 +567,71 @@ namespace QuanLiGaRaOto
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
+            // BienSo
+            // 
+            this.BienSo.DataPropertyName = "BienSo";
+            this.BienSo.FillWeight = 200F;
+            this.BienSo.HeaderText = "Biển số";
+            this.BienSo.MinimumWidth = 6;
+            this.BienSo.Name = "BienSo";
+            this.BienSo.Width = 175;
+            // 
+            // TenChuXe
+            // 
+            this.TenChuXe.DataPropertyName = "TenChuXe";
+            this.TenChuXe.HeaderText = "Tên chủ xe";
+            this.TenChuXe.MinimumWidth = 6;
+            this.TenChuXe.Name = "TenChuXe";
+            this.TenChuXe.Width = 150;
+            // 
+            // HieuXe
+            // 
+            this.HieuXe.DataPropertyName = "HieuXe";
+            this.HieuXe.HeaderText = "Hiệu xe";
+            this.HieuXe.MinimumWidth = 6;
+            this.HieuXe.Name = "HieuXe";
+            this.HieuXe.Width = 150;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.MinimumWidth = 6;
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.Width = 250;
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "Điện thoại";
+            this.SDT.MinimumWidth = 6;
+            this.SDT.Name = "SDT";
+            this.SDT.Width = 175;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            this.Email.Width = 150;
+            // 
+            // TongNo
+            // 
+            this.TongNo.DataPropertyName = "TongNo";
+            this.TongNo.HeaderText = "Tiền nợ";
+            this.TongNo.MinimumWidth = 6;
+            this.TongNo.Name = "TongNo";
+            this.TongNo.Width = 200;
+            // 
+            // NgayTiepNhan
+            // 
+            this.NgayTiepNhan.DataPropertyName = "NgayTiepNhan";
+            this.NgayTiepNhan.HeaderText = "Ngày tiếp nhận";
+            this.NgayTiepNhan.MinimumWidth = 6;
+            this.NgayTiepNhan.Name = "NgayTiepNhan";
+            this.NgayTiepNhan.Width = 250;
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
@@ -665,6 +730,7 @@ namespace QuanLiGaRaOto
             this.button2.Text = "Xóa thông tin xe";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.DeleteCar);
             // 
             // button1
             // 
@@ -893,71 +959,6 @@ namespace QuanLiGaRaOto
             this.textBox1.Size = new System.Drawing.Size(341, 27);
             this.textBox1.TabIndex = 0;
             this.textBox1.TabStop = false;
-            // 
-            // BienSo
-            // 
-            this.BienSo.DataPropertyName = "BienSo";
-            this.BienSo.FillWeight = 200F;
-            this.BienSo.HeaderText = "Biển số";
-            this.BienSo.MinimumWidth = 6;
-            this.BienSo.Name = "BienSo";
-            this.BienSo.Width = 175;
-            // 
-            // TenChuXe
-            // 
-            this.TenChuXe.DataPropertyName = "TenChuXe";
-            this.TenChuXe.HeaderText = "Tên chủ xe";
-            this.TenChuXe.MinimumWidth = 6;
-            this.TenChuXe.Name = "TenChuXe";
-            this.TenChuXe.Width = 150;
-            // 
-            // HieuXe
-            // 
-            this.HieuXe.DataPropertyName = "HieuXe";
-            this.HieuXe.HeaderText = "Hiệu xe";
-            this.HieuXe.MinimumWidth = 6;
-            this.HieuXe.Name = "HieuXe";
-            this.HieuXe.Width = 150;
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.DataPropertyName = "DiaChi";
-            this.DiaChi.HeaderText = "Địa chỉ";
-            this.DiaChi.MinimumWidth = 6;
-            this.DiaChi.Name = "DiaChi";
-            this.DiaChi.Width = 250;
-            // 
-            // SDT
-            // 
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.HeaderText = "Điện thoại";
-            this.SDT.MinimumWidth = 6;
-            this.SDT.Name = "SDT";
-            this.SDT.Width = 175;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.MinimumWidth = 6;
-            this.Email.Name = "Email";
-            this.Email.Width = 150;
-            // 
-            // TongNo
-            // 
-            this.TongNo.DataPropertyName = "TongNo";
-            this.TongNo.HeaderText = "Tiền nợ";
-            this.TongNo.MinimumWidth = 6;
-            this.TongNo.Name = "TongNo";
-            this.TongNo.Width = 200;
-            // 
-            // NgayTiepNhan
-            // 
-            this.NgayTiepNhan.DataPropertyName = "NgayTiepNhan";
-            this.NgayTiepNhan.HeaderText = "Ngày tiếp nhận";
-            this.NgayTiepNhan.MinimumWidth = 6;
-            this.NgayTiepNhan.Name = "NgayTiepNhan";
-            this.NgayTiepNhan.Width = 250;
             // 
             // MainWindoww
             // 

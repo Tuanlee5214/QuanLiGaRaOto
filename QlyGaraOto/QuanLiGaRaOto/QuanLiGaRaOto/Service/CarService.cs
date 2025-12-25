@@ -217,7 +217,50 @@ namespace QuanLiGaRaOto.Service
                 };
             }
         }
-    }
+
+        public InsertOrUpdateResult DeleteCar(string bs)
+        {
+            try
+            {
+                using (var conn = _db.GetConnection())
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "DELETE FROM XE WHERE BienSo = @bs";
+                    cmd.Parameters.Add("@bs", SqlDbType.Char, 20).Value = bs;
+
+
+                    int row = cmd.ExecuteNonQuery();
+                    if (row != 0)
+                    {
+                        return new InsertOrUpdateResult
+                        {
+                            Success = true,
+                            SuccessMessage = "Xóa thông tin thành công"
+                        };
+                    }
+                    else
+                    {
+                        return new InsertOrUpdateResult
+                        {
+                            Success = false,
+                            ErrorMessage = "Xóa thông tin không thành công"
+                        };
+                    }
+
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("SQL Error: " + ex.Message);
+                return new InsertOrUpdateResult
+                {
+                    Success = false,
+                    ErrorMessage = "Lỗi kết nối tới máy chủ"
+                };
+            }
+        }
+}
 
     public class InsertOrUpdateResult
     {

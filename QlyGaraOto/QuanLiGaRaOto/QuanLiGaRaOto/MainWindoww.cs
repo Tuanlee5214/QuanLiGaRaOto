@@ -203,5 +203,25 @@ namespace QuanLiGaRaOto
             if (row.Cells["TongNo"].Value != null)
                 textBox7.Text = row.Cells["TongNo"].Value.ToString();
         }
+
+        private void DeleteCar(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text) ||
+               string.IsNullOrWhiteSpace(textBox3.Text) || string.IsNullOrWhiteSpace(textBox4.Text) ||
+               string.IsNullOrWhiteSpace(textBox5.Text))
+            {
+                MessageBox.Show("Vui lòng chọn thông tin xe", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa xe khỏi hệ thống không", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if(result == DialogResult.OK)
+            {
+                var result1 = CarService.Instance.DeleteCar(textBox1.Text.Trim());
+                if (result1.Success)
+                    MessageBox.Show(result1.SuccessMessage);
+                else MessageBox.Show(result1.ErrorMessage);
+            }
+
+        }
     }
 }
