@@ -32,6 +32,9 @@ namespace QuanLiGaRaOto
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -71,14 +74,14 @@ namespace QuanLiGaRaOto
             this.label10 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BienSo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenChuXe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HieuXe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TongNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayTiepNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
@@ -121,7 +124,7 @@ namespace QuanLiGaRaOto
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(0, 30);
+            this.panel1.Location = new System.Drawing.Point(0, 28);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1924, 54);
@@ -137,6 +140,7 @@ namespace QuanLiGaRaOto
             this.label1.Size = new System.Drawing.Size(461, 54);
             this.label1.TabIndex = 0;
             this.label1.Text = "Danh sách xe tiếp nhận";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // menuStrip1
             // 
@@ -151,7 +155,7 @@ namespace QuanLiGaRaOto
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1924, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1924, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -163,7 +167,7 @@ namespace QuanLiGaRaOto
             this.thôngTinTàiKhoảnHiệnToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thôngTinTàiKhoảnHiệnToolStripMenuItem.Image = global::QuanLiGaRaOto.Properties.Resources.shield;
             this.thôngTinTàiKhoảnHiệnToolStripMenuItem.Name = "thôngTinTàiKhoảnHiệnToolStripMenuItem";
-            this.thôngTinTàiKhoảnHiệnToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
+            this.thôngTinTàiKhoảnHiệnToolStripMenuItem.Size = new System.Drawing.Size(177, 24);
             this.thôngTinTàiKhoảnHiệnToolStripMenuItem.Text = "Thông tin tài khoản";
             // 
             // toolStripMenuItem7
@@ -190,7 +194,7 @@ namespace QuanLiGaRaOto
             this.báoCáoThốngKếToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.báoCáoThốngKếToolStripMenuItem.Image = global::QuanLiGaRaOto.Properties.Resources.layout;
             this.báoCáoThốngKếToolStripMenuItem.Name = "báoCáoThốngKếToolStripMenuItem";
-            this.báoCáoThốngKếToolStripMenuItem.Size = new System.Drawing.Size(162, 26);
+            this.báoCáoThốngKếToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
             this.báoCáoThốngKếToolStripMenuItem.Text = "Báo cáo thống kê";
             // 
             // toolStripMenuItem1
@@ -219,7 +223,7 @@ namespace QuanLiGaRaOto
             this.nghiệpVụỨngDụngToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nghiệpVụỨngDụngToolStripMenuItem.Image = global::QuanLiGaRaOto.Properties.Resources.project_manager;
             this.nghiệpVụỨngDụngToolStripMenuItem.Name = "nghiệpVụỨngDụngToolStripMenuItem";
-            this.nghiệpVụỨngDụngToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.nghiệpVụỨngDụngToolStripMenuItem.Size = new System.Drawing.Size(186, 24);
             this.nghiệpVụỨngDụngToolStripMenuItem.Text = "Nghiệp vụ ứng dụng";
             // 
             // toolStripMenuItem3
@@ -268,7 +272,7 @@ namespace QuanLiGaRaOto
             this.quảnLíToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quảnLíToolStripMenuItem.Image = global::QuanLiGaRaOto.Properties.Resources.project_management;
             this.quảnLíToolStripMenuItem.Name = "quảnLíToolStripMenuItem";
-            this.quảnLíToolStripMenuItem.Size = new System.Drawing.Size(96, 26);
+            this.quảnLíToolStripMenuItem.Size = new System.Drawing.Size(96, 24);
             this.quảnLíToolStripMenuItem.Text = "Quản lí ";
             // 
             // toolStripMenuItem9
@@ -343,7 +347,7 @@ namespace QuanLiGaRaOto
             this.hỗTrợToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hỗTrợToolStripMenuItem.Image = global::QuanLiGaRaOto.Properties.Resources.question;
             this.hỗTrợToolStripMenuItem.Name = "hỗTrợToolStripMenuItem";
-            this.hỗTrợToolStripMenuItem.Size = new System.Drawing.Size(87, 26);
+            this.hỗTrợToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
             this.hỗTrợToolStripMenuItem.Text = "Hỗ trợ";
             // 
             // toolStripMenuItem17
@@ -376,7 +380,7 @@ namespace QuanLiGaRaOto
             this.panel2.Controls.Add(this.textBox8);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 84);
+            this.panel2.Location = new System.Drawing.Point(0, 82);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1924, 123);
@@ -506,19 +510,20 @@ namespace QuanLiGaRaOto
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.dataGridView1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 207);
+            this.panel3.Location = new System.Drawing.Point(0, 205);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1924, 432);
+            this.panel3.Size = new System.Drawing.Size(1924, 434);
             this.panel3.TabIndex = 3;
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -526,79 +531,106 @@ namespace QuanLiGaRaOto
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8});
+            this.BienSo,
+            this.TenChuXe,
+            this.HieuXe,
+            this.DiaChi,
+            this.SDT,
+            this.Email,
+            this.TongNo,
+            this.NgayTiepNhan});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowHeadersWidth = 51;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1924, 432);
+            this.dataGridView1.Size = new System.Drawing.Size(1924, 434);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // Column1
+            // BienSo
             // 
-            this.Column1.FillWeight = 200F;
-            this.Column1.HeaderText = "Biển số";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 175;
+            this.BienSo.DataPropertyName = "BienSo";
+            this.BienSo.FillWeight = 200F;
+            this.BienSo.HeaderText = "Biển số";
+            this.BienSo.MinimumWidth = 6;
+            this.BienSo.Name = "BienSo";
+            this.BienSo.Width = 175;
             // 
-            // Column2
+            // TenChuXe
             // 
-            this.Column2.HeaderText = "Tên chủ xe";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 150;
+            this.TenChuXe.DataPropertyName = "TenChuXe";
+            this.TenChuXe.HeaderText = "Tên chủ xe";
+            this.TenChuXe.MinimumWidth = 6;
+            this.TenChuXe.Name = "TenChuXe";
+            this.TenChuXe.Width = 150;
             // 
-            // Column3
+            // HieuXe
             // 
-            this.Column3.HeaderText = "Hiệu xe";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 150;
+            this.HieuXe.DataPropertyName = "HieuXe";
+            this.HieuXe.HeaderText = "Hiệu xe";
+            this.HieuXe.MinimumWidth = 6;
+            this.HieuXe.Name = "HieuXe";
+            this.HieuXe.Width = 150;
             // 
-            // Column4
+            // DiaChi
             // 
-            this.Column4.HeaderText = "Địa chỉ";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 250;
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.MinimumWidth = 6;
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.Width = 250;
             // 
-            // Column5
+            // SDT
             // 
-            this.Column5.HeaderText = "Điện thoại";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 175;
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "Điện thoại";
+            this.SDT.MinimumWidth = 6;
+            this.SDT.Name = "SDT";
+            this.SDT.Width = 175;
             // 
-            // Column6
+            // Email
             // 
-            this.Column6.HeaderText = "Email";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 150;
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            this.Email.Width = 150;
             // 
-            // Column7
+            // TongNo
             // 
-            this.Column7.HeaderText = "Tiền nợ";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 200;
+            this.TongNo.DataPropertyName = "TongNo";
+            this.TongNo.HeaderText = "Tiền nợ";
+            this.TongNo.MinimumWidth = 6;
+            this.TongNo.Name = "TongNo";
+            this.TongNo.Width = 200;
             // 
-            // Column8
+            // NgayTiepNhan
             // 
-            this.Column8.HeaderText = "Ngày tiếp nhận";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 250;
+            this.NgayTiepNhan.DataPropertyName = "NgayTiepNhan";
+            this.NgayTiepNhan.HeaderText = "Ngày tiếp nhận";
+            this.NgayTiepNhan.MinimumWidth = 6;
+            this.NgayTiepNhan.Name = "NgayTiepNhan";
+            this.NgayTiepNhan.Width = 250;
             // 
             // panel4
             // 
@@ -663,6 +695,7 @@ namespace QuanLiGaRaOto
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.GetCars);
             // 
             // button3
             // 
@@ -680,6 +713,7 @@ namespace QuanLiGaRaOto
             this.button3.Text = "Xe nhập trong ngày";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.GetCarInADay);
             // 
             // button2
             // 
@@ -696,6 +730,7 @@ namespace QuanLiGaRaOto
             this.button2.Text = "Xóa thông tin xe";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.DeleteCar);
             // 
             // button1
             // 
@@ -865,7 +900,7 @@ namespace QuanLiGaRaOto
             this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(251)))));
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(749, 63);
+            this.textBox5.Location = new System.Drawing.Point(749, 61);
             this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
@@ -941,6 +976,7 @@ namespace QuanLiGaRaOto
             this.Name = "MainWindoww";
             this.Text = "Quản Lí Garo Ô tô";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Activated += new System.EventHandler(this.ActivateForm);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -1014,14 +1050,6 @@ namespace QuanLiGaRaOto
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.RadioButton radioButton1;
@@ -1032,5 +1060,13 @@ namespace QuanLiGaRaOto
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BienSo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenChuXe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HieuXe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TongNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayTiepNhan;
     }
 }

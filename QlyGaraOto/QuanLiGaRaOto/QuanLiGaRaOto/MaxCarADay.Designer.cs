@@ -58,7 +58,7 @@
             this.label1.Location = new System.Drawing.Point(11, 17);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(835, 46);
+            this.label1.Size = new System.Drawing.Size(811, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "CẬP NHẬT SỐ XE SỬA CHỮA TỐI ĐA TRONG NGÀY";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -101,6 +101,7 @@
             this.button1.TabIndex = 36;
             this.button1.Text = "Cập nhật thông tin";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.UpdateInfoMaxCar);
             // 
             // MaxCarADay
             // 
@@ -115,7 +116,7 @@
             this.Name = "MaxCarADay";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MaxCarADay";
-            this.Load += new System.EventHandler(this.MaxCarADay_Load);
+            this.Activated += new System.EventHandler(this.ActivateForm);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
