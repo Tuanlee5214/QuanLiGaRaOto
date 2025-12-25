@@ -122,6 +122,47 @@ namespace QuanLiGaRaOto.Service
             }
         }
 
+        public Car GetCarFromBienSo(string BienSo)
+        {
+                using (var conn = _db.GetConnection())
+                using (var cmd = conn.CreateCommand())
+                {
+
+                    cmd.CommandText =
+                        "SELECT BienSo, HieuXe, TenChuXe, DiaChi, SDT, Email, NgayTiepNhan, TongNo " +
+                        "FROM XE WHERE BienSo = @bs";
+
+                    cmd.Parameters.Add("@bs", SqlDbType.Char, 20).Value = BienSo;
+
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new Car
+                            {
+                                BienSo = reader["BienSo"].ToString(),
+                                HieuXe = reader["HieuXe"].ToString(),
+                                TenChuXe = reader["TenChuXe"].ToString(),
+                                DiaChi = reader["DiaChi"].ToString(),
+                                SDT = reader["SDT"].ToString(),
+                                Email = reader["Email"].ToString(),
+                                NgayTiepNhan = Convert.ToDateTime(reader["NgayTiepNhan"]),
+                                TongNo = Convert.ToDecimal(reader["TongNo"])
+                            };
+                        }
+                        else
+                        {
+                            return new Car();
+                        }
+                    
+                    }
+                    
+                }
+            
+            
+        }
+
         public InsertOrUpdateResult UpdateCar(Car item)
         {
             try
@@ -217,6 +258,89 @@ namespace QuanLiGaRaOto.Service
                 };
             }
         }
+
+        public GetCarsResult SearchCar(string searchText, int type)
+        {
+            try
+            {
+                using (var conn = _db.GetConnection())
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText =
+                        "SELECT BienSo, HieuXe, TenChuXe, DiaChi, SDT, Email, NgayTiepNhan, TongNo " +
+                        "FROM XE ";
+
+                    switch (type)
+                    {
+                        case 3: // Biển số
+                            cmd.CommandText += "WHERE BienSo LIKE @bs";
+                            cmd.Parameters.Add("@bs", SqlDbType.VarChar, 20)
+                                          .Value = "%" + searchText.Trim() + "%";
+                            break;
+
+                        case 4: // Hiệu xe
+                            cmd.CommandText += "WHERE HieuXe LIKE @hx";
+                            cmd.Parameters.Add("@hx", SqlDbType.VarChar, 30)
+                                          .Value = "%" + searchText.Trim() + "%";
+                            break;
+
+                        case 1: // Tên chủ xe
+                            cmd.CommandText += "WHERE TenChuXe LIKE @ten";
+                            cmd.Parameters.Add("@ten", SqlDbType.NVarChar, 50)
+                                          .Value = "%" + searchText.Trim() + "%";
+                            break;
+
+                        case 2: // SĐT
+                            cmd.CommandText += "WHERE SDT LIKE @sdt";
+                            cmd.Parameters.Add("@sdt", SqlDbType.VarChar, 15)
+                                          .Value = "%" + searchText.Trim() + "%";
+                            break;
+
+                        default:
+                            return new GetCarsResult
+                            {
+                                Success = false,
+                                ErrorMessage = "Loại tìm kiếm không hợp lệ"
+                            };
+                    }
+
+                    var list = new BindingList<Car>();
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            list.Add(new Car
+                            {
+                                BienSo = reader["BienSo"].ToString(),
+                                HieuXe = reader["HieuXe"].ToString(),
+                                TenChuXe = reader["TenChuXe"].ToString(),
+                                DiaChi = reader["DiaChi"].ToString(),
+                                SDT = reader["SDT"].ToString(),
+                                Email = reader["Email"].ToString(),
+                                NgayTiepNhan = Convert.ToDateTime(reader["NgayTiepNhan"]),
+                                TongNo = Convert.ToDecimal(reader["TongNo"])
+                            });
+                        }
+                    }
+
+                    return new GetCarsResult
+                    {
+                        Success = true,
+                        ListCar = list
+                    };
+                }
+            }
+            catch (SqlException)
+            {
+                return new GetCarsResult
+                {
+                    Success = false,
+                    ErrorMessage = "Lỗi kết nối tới server"
+                };
+            }
+        }
+
 
         public InsertOrUpdateResult DeleteCar(string bs)
         {
