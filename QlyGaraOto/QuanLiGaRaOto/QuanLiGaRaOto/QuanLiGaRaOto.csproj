@@ -138,8 +138,12 @@
     </Compile>
     <Compile Include="Model\Car.cs" />
     <Compile Include="Model\Group.cs" />
+    <Compile Include="Model\HieuXe.cs" />
     <Compile Include="Model\NoiDung.cs" />
+    <Compile Include="Model\PTT.cs" />
+    <Compile Include="Model\PN.cs" />
     <Compile Include="Model\PhuTung.cs" />
+    <Compile Include="Model\PSC.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="PNKDetail.cs">
       <SubType>Form</SubType>

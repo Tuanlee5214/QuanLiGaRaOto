@@ -455,7 +455,101 @@ namespace QuanLiGaRaOto.Service
                 };
             }
         }
+        public BindingList<PN> GetPN()
+        {
+            using (var conn = _db.GetConnection())
+            using (var cmd = conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT MaPhieuNhap, NgayNhap, TongTien FROM PHIEUNHAPPHUTUNG";
+                var list = new BindingList<PN>();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new PN
+                        {
+                            MaPhieuNhap = reader["MaPhieuNhap"].ToString(),
+                            NgayNhap = Convert.ToDateTime(reader["NgayNhap"]),
+                            TongTien = Convert.ToDecimal(reader["TongTien"])
+                        });
+                    }
+                }
+                return list;
+            }
+        }
 
+        public BindingList<PN> SearchPN(string searchText, int type, int ngay, int thang, int nam)
+        {
+            using (var conn = _db.GetConnection())
+            using (var cmd = conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT MaPhieuNhap, NgayNhap, TongTien FROM PHIEUNHAPPHUTUNG ";
+                switch (type)
+                {
+                    case 1:
+                        cmd.CommandText += "WHERE MaPhieuNhap LIKE @text";
+                        cmd.Parameters.Add("@text", SqlDbType.VarChar, 20).Value = "%" + searchText.Trim() + "%";
+                        break;
+                    case 2:
+                        cmd.CommandText +=
+                            "WHERE DAY(NgayNhap) = @ngay " +
+                            "AND MONTH(NgayNhap) = @thang " +
+                            "AND YEAR(NgayNhap) = @nam";
+                        cmd.Parameters.AddWithValue("@ngay", ngay);
+                        cmd.Parameters.AddWithValue("@thang", thang);
+                        cmd.Parameters.AddWithValue("@nam", nam);
+                        break;
+                    default:
+                        break;
+                }
+                var list = new BindingList<PN>();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new PN
+                        {
+                            MaPhieuNhap = reader["MaPhieuNhap"].ToString(),
+                            NgayNhap = Convert.ToDateTime(reader["NgayNhap"]),
+                            TongTien = Convert.ToDecimal(reader["TongTien"])
+                        });
+                    }
+                }
+                return list;
+            }
+        }
+
+
+        public BindingList<CT_PN> GetCT_PN(string mapn)
+        {
+            using (var conn = _db.GetConnection())
+            using (var cmd = conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT PT.MaPhuTung, PT.TenPhuTung, CT.SoLuongNhap, CT.DonGiaNhap, CT.ThanhTien " +
+                                  "FROM CT_PHIEUNHAPPHUTUNG CT JOIN PHUTUNG PT ON PT.MaPhuTung = CT.MaPhuTung" +
+                                  " WHERE CT.MaPhieuNhap = @mapn";
+
+
+                cmd.Parameters.Add("@mapn", SqlDbType.Char, 7).Value = mapn;
+                var list = new BindingList<CT_PN>();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new CT_PN
+                        {
+                            MaPhuTung = reader["MaPhuTung"].ToString(),
+                            TenPhuTung = reader["TenPhuTung"].ToString(),
+                            DonGiaNhap = Convert.ToDecimal(reader["DonGiaNhap"]),
+                            SoLuongNhap = Convert.ToInt32(reader["SoLuongNhap"]),
+                            ThanhTien = Convert.ToDecimal(reader["ThanhTien"]),
+
+                        });
+                    }
+                }
+                return list;
+            }
+        }
     }
 
     public class GetPhuTungResult

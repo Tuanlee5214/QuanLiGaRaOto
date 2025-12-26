@@ -45,6 +45,92 @@ namespace QuanLiGaRaOto.Service
                 return dt;
             }
         }
+        
+        public BindingList<HieuXe> SearchHieuXe(string searchText)
+        {
+            using(var conn = _db.GetConnection())
+            using(var cmd = conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT HieuXe FROM HIEUXE WHERE HieuXe LIKE @ten";
+                cmd.Parameters.Add("@ten", SqlDbType.VarChar, 30).Value = "%" + searchText.Trim() + "%";
+
+                var list = new BindingList<HieuXe>();
+                using(var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new HieuXe
+                        { 
+                            HieuXee = reader["HieuXe"].ToString()
+                        });
+                    }
+                }
+                return list;
+            }
+        }
+
+        public InsertOrUpdateResult AddHieuXe(string hx)
+        {
+            try
+            {
+                using (var conn = _db.GetConnection())
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "INSERT INTO HIEUXE(HieuXe) VALUES (@hx)";
+                    cmd.Parameters.Add("@hx", SqlDbType.VarChar, 20).Value = hx;
+
+                    int row = cmd.ExecuteNonQuery();
+                    if (row != 0)
+                    {
+                        return new InsertOrUpdateResult
+                        {
+                            Success = true,
+                            SuccessMessage = "Thêm thông tin thành công"
+                        };
+                    }
+                    else
+                    {
+                        return new InsertOrUpdateResult
+                        {
+                            Success = false,
+                            ErrorMessage = "Biển số xe đã tồn tại"
+                        };
+                    }
+                }
+
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("SQL Error: " + ex.Message);
+                return new InsertOrUpdateResult
+                {
+                    Success = false,
+                    ErrorMessage = "Lỗi kết nối tới máy chủ"
+                };
+            }
+        }
+
+        public BindingList<HieuXe> GetHieuXe()
+        {
+            using (var conn = _db.GetConnection())
+            using (var cmd = conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT HieuXe FROM HIEUXE";
+                var ListHX = new BindingList<HieuXe>() ;
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while(reader.Read())
+                    {
+                        ListHX.Add(new HieuXe
+                        {
+                            HieuXee = reader["HieuXe"].ToString()
+                        });
+                    }
+                }
+                return ListHX;
+
+            }
+        }
 
         public int GetCarInADay()
         {
@@ -384,7 +470,50 @@ namespace QuanLiGaRaOto.Service
                 };
             }
         }
-}
+
+        public InsertOrUpdateResult DeleteHieuXe(string hx)
+        {
+            try
+            {
+                using (var conn = _db.GetConnection())
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "DELETE FROM HIEUXE WHERE HieuXe = @hx";
+                    cmd.Parameters.Add("@hx", SqlDbType.VarChar, 30).Value = hx;
+
+
+                    int row = cmd.ExecuteNonQuery();
+                    if (row != 0)
+                    {
+                        return new InsertOrUpdateResult
+                        {
+                            Success = true,
+                            SuccessMessage = "Xóa thông tin thành công"
+                        };
+                    }
+                    else
+                    {
+                        return new InsertOrUpdateResult
+                        {
+                            Success = false,
+                            ErrorMessage = "Xóa thông tin không thành công"
+                        };
+                    }
+
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("SQL Error: " + ex.Message);
+                return new InsertOrUpdateResult
+                {
+                    Success = false,
+                    ErrorMessage = "Lỗi kết nối tới máy chủ"
+                };
+            }
+        }
+    }
 
     public class InsertOrUpdateResult
     {

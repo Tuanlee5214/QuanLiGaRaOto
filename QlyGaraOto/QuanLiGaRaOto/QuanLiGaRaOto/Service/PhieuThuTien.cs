@@ -5,6 +5,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using QuanLiGaRaOto.Model;
+using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace QuanLiGaRaOto.Service
 {
@@ -88,6 +91,72 @@ namespace QuanLiGaRaOto.Service
                 }
 
                 return "TT" + nextNumber.ToString("D5");
+            }
+        }
+
+        public BindingList<PTT> GetPTT()
+        {
+            using (var conn = _db.GetConnection())
+            using (var cmd = conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT MaPhieuThu, BienSo, NgayThu, SoTienThu FROM PHIEUTHUTIEN";
+                var list = new BindingList<PTT>();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new PTT
+                        {
+                            MaPhieuThu = reader["MaPhieuThu"].ToString(),
+                            BienSo = reader["BienSo"].ToString(),
+                            NgayThu = Convert.ToDateTime(reader["NgayThu"]),
+                            SoTienThu = Convert.ToDecimal(reader["SoTienThu"])
+                        });
+                    }
+                }
+                return list;
+            }
+        }
+
+        public BindingList<PTT> SearchPTT(string searchText, int type, int ngay, int thang, int nam)
+        {
+            using (var conn = _db.GetConnection())
+            using (var cmd = conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT MaPhieuThu, BienSo, NgayThu, SoTienThu FROM PHIEUTHUTIEN ";
+                switch (type)
+                {
+                    case 1:
+                        cmd.CommandText += "WHERE MaPhieuThu LIKE @text";
+                        cmd.Parameters.Add("@text", SqlDbType.VarChar, 20).Value = "%" + searchText.Trim() + "%";
+                        break;
+                    case 2:
+                        cmd.CommandText +=
+                            "WHERE DAY(NgayThu) = @ngay " +
+                            "AND MONTH(NgayThu) = @thang " +
+                            "AND YEAR(NgayThu) = @nam";
+                        cmd.Parameters.AddWithValue("@ngay", ngay);
+                        cmd.Parameters.AddWithValue("@thang", thang);
+                        cmd.Parameters.AddWithValue("@nam", nam);
+                        break;
+                    default:
+                        break;
+                }
+                var list = new BindingList<PTT>();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new PTT
+                        {
+                            MaPhieuThu = reader["MaPhieuThu"].ToString(),
+                            BienSo = reader["BienSo"].ToString(),
+                            NgayThu = Convert.ToDateTime(reader["NgayThu"]),
+                            SoTienThu = Convert.ToDecimal(reader["SoTienThu"])
+                        });
+                    }
+                }
+                return list;
             }
         }
     }
