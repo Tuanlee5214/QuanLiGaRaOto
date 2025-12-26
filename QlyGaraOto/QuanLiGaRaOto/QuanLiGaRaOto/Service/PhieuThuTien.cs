@@ -5,6 +5,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using QuanLiGaRaOto.Model;
+using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace QuanLiGaRaOto.Service
 {
@@ -90,5 +93,7 @@ namespace QuanLiGaRaOto.Service
                 return "TT" + nextNumber.ToString("D5");
             }
         }
+
+       
     }
 }

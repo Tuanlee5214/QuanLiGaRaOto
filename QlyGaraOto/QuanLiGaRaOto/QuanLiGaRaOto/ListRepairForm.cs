@@ -74,7 +74,7 @@ namespace QuanLiGaRaOto
                 nam = dateTimePicker1.Value.Year;
                 
             }
-
+            
             if (type == 0)
             {
                 MessageBox.Show("Vui lòng chọn kiểu tìm kiếm phiếu sửa chữa", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
