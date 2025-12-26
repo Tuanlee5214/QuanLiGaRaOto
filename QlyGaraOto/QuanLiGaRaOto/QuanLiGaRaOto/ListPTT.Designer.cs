@@ -39,15 +39,15 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.MaVTPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenVTPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGNHAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.MaPhieuThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BienSo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -110,6 +110,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -122,10 +123,10 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaVTPT,
-            this.TenVTPT,
-            this.DGNHAP,
-            this.Column1});
+            this.MaPhieuThu,
+            this.BienSo,
+            this.NgayThu,
+            this.TongTien});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -150,34 +151,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1186, 412);
             this.dataGridView1.TabIndex = 57;
-            // 
-            // MaVTPT
-            // 
-            this.MaVTPT.HeaderText = "Mã phiếu thu tiền";
-            this.MaVTPT.MinimumWidth = 6;
-            this.MaVTPT.Name = "MaVTPT";
-            this.MaVTPT.Width = 220;
-            // 
-            // TenVTPT
-            // 
-            this.TenVTPT.HeaderText = "Biển số xe";
-            this.TenVTPT.MinimumWidth = 6;
-            this.TenVTPT.Name = "TenVTPT";
-            this.TenVTPT.Width = 320;
-            // 
-            // DGNHAP
-            // 
-            this.DGNHAP.HeaderText = "Ngày thu tiền";
-            this.DGNHAP.MinimumWidth = 6;
-            this.DGNHAP.Name = "DGNHAP";
-            this.DGNHAP.Width = 300;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Tổng tiền thu";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 250;
             // 
             // panel1
             // 
@@ -241,6 +214,38 @@
             this.button6.TabIndex = 60;
             this.button6.UseVisualStyleBackColor = false;
             // 
+            // MaPhieuThu
+            // 
+            this.MaPhieuThu.DataPropertyName = "MaPhieuThu";
+            this.MaPhieuThu.HeaderText = "Mã phiếu thu tiền";
+            this.MaPhieuThu.MinimumWidth = 6;
+            this.MaPhieuThu.Name = "MaPhieuThu";
+            this.MaPhieuThu.Width = 220;
+            // 
+            // BienSo
+            // 
+            this.BienSo.DataPropertyName = "BienSo";
+            this.BienSo.HeaderText = "Biển số xe";
+            this.BienSo.MinimumWidth = 6;
+            this.BienSo.Name = "BienSo";
+            this.BienSo.Width = 320;
+            // 
+            // NgayThu
+            // 
+            this.NgayThu.DataPropertyName = "NgayThu";
+            this.NgayThu.HeaderText = "Ngày thu tiền";
+            this.NgayThu.MinimumWidth = 6;
+            this.NgayThu.Name = "NgayThu";
+            this.NgayThu.Width = 300;
+            // 
+            // TongTien
+            // 
+            this.TongTien.DataPropertyName = "TongTien";
+            this.TongTien.HeaderText = "Tổng tiền thu";
+            this.TongTien.MinimumWidth = 6;
+            this.TongTien.Name = "TongTien";
+            this.TongTien.Width = 250;
+            // 
             // ListPTT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -280,9 +285,9 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaVTPT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenVTPT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGNHAP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhieuThu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BienSo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayThu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
     }
 }

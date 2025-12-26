@@ -1,12 +1,15 @@
-﻿using Microsoft.SqlServer.Server;
+﻿using DocumentFormat.OpenXml.Wordprocessing;
+using Microsoft.SqlServer.Server;
 using QuanLiGaRaOto.Model;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace QuanLiGaRaOto.Service
@@ -308,6 +311,103 @@ namespace QuanLiGaRaOto.Service
             }
         }
 
+        public BindingList<PSC> GetPSC()
+        {
+            using(var conn = _db.GetConnection())
+            using(var cmd = conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT MaPhieuSC, BienSo, NgaySuaChua, TongTien FROM PHIEUSUACHUA";
+                var list = new BindingList<PSC>();
+                using(var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new PSC
+                        {
+                            MaPhieuSC = reader["MaPhieuSC"].ToString(),
+                            BienSo = reader["BienSo"].ToString(),
+                            NgaySuaChua = Convert.ToDateTime(reader["NgaySuaChua"]),
+                            TongTien = Convert.ToDecimal(reader["TongTien"])
+                        });
+                    }
+                }
+                return list;
+            }
+        }
 
+        public BindingList<PSC> SearchPSC(string searchText, int type, int ngay, int thang, int nam)
+        {
+            using(var conn = _db.GetConnection())
+            using(var cmd = conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT MaPhieuSC, BienSo, NgaySuaChua, TongTien FROM PHIEUSUACHUA ";
+                switch(type)
+                {
+                    case 1:
+                        cmd.CommandText += "WHERE MaPhieuSC LIKE @text";
+                        cmd.Parameters.Add("@text", SqlDbType.VarChar, 20).Value = "%" + searchText.Trim() + "%";
+                        break;
+                    case 2:
+                        cmd.CommandText +=
+                            "WHERE DAY(NgaySuaChua) = @ngay " +
+                            "AND MONTH(NgaySuaChua) = @thang " +
+                            "AND YEAR(NgaySuaChua) = @nam";
+                        cmd.Parameters.AddWithValue("@ngay", ngay);
+                        cmd.Parameters.AddWithValue("@thang", thang);
+                        cmd.Parameters.AddWithValue("@nam", nam);
+                        break;
+                    default:
+                        break;
+                }
+                var list = new BindingList<PSC>();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new PSC
+                        {
+                            MaPhieuSC = reader["MaPhieuSC"].ToString(),
+                            BienSo = reader["BienSo"].ToString(),
+                            NgaySuaChua = Convert.ToDateTime(reader["NgaySuaChua"]),
+                            TongTien = Convert.ToDecimal(reader["TongTien"])
+                        });
+                    }
+                }
+                return list;
+            }
+        }
+        
+        
+        public BindingList<CT_PSC> GetCT_PSC(string mapsc)
+        {
+            using (var conn = _db.GetConnection())
+            using (var cmd = conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT ND.MoTa, PT.MaPhuTung, PT.TenPhuTung, DonGia, SoLuong, ThanhTien, PSC.TienCong" +
+                                  " FROM CT_PHIEUSUACHUA PSC JOIN PHUTUNG PT ON PT.MaPhuTung = PSC.MaPhuTung" +
+                                  " JOIN NOIDUNGSUACHUA ND ON ND.MaNoiDung = PSC.MaNoiDung WHERE PSC.MaPhieuSC = @mapsc";
+
+                cmd.Parameters.Add("@mapsc", SqlDbType.Char, 7).Value = mapsc;
+                var list = new BindingList<CT_PSC>();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new CT_PSC
+                        {
+                            MoTa = reader["MoTa"].ToString(),
+                            MaPhuTung = reader["MaPhuTung"].ToString(),
+                            TenPhuTung = reader["TenPhuTung"].ToString(),
+                            DonGia = Convert.ToDecimal(reader["DonGia"]),
+                            SoLuong = Convert.ToInt32(reader["SoLuong"]),
+                            ThanhTien = Convert.ToDecimal(reader["ThanhTien"]),
+                            TienCong = Convert.ToDecimal(reader["TienCong"])
+                          
+                        });
+                    }
+                }
+                return list;
+            }
+        }
     }
 }
