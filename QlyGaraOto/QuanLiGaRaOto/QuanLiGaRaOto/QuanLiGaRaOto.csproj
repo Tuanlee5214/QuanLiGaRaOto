@@ -140,6 +140,7 @@
     <Compile Include="Model\Group.cs" />
     <Compile Include="Model\HieuXe.cs" />
     <Compile Include="Model\NoiDung.cs" />
+    <Compile Include="Model\PTT.cs" />
     <Compile Include="Model\PN.cs" />
     <Compile Include="Model\PhuTung.cs" />
     <Compile Include="Model\PSC.cs" />
