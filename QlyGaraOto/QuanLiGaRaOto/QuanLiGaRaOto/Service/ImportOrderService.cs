@@ -1,6 +1,7 @@
 ﻿using QuanLiGaRaOto.Model;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -30,6 +31,28 @@ namespace QuanLiGaRaOto.Service
             }
         }
 
+        public string GetMaPhuTung()
+        {
+            using (var conn = _db.GetConnection())
+            using (var cmd = conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT MAX(MaPhuTung) FROM PHUTUNG";
+
+                object result = cmd.ExecuteScalar();
+
+                int nextNumber = 1;
+
+                if (result != null && result != DBNull.Value)
+                {
+                    string lastCode = result.ToString();
+                    int number = int.Parse(lastCode.Substring(2));
+                    nextNumber = number + 1;
+                }
+
+                return "PT" + nextNumber.ToString("D5");
+            }
+        }
+
         public string GetMaPhieuNhap()
         {
             using (var conn = _db.GetConnection())
@@ -51,6 +74,94 @@ namespace QuanLiGaRaOto.Service
                 return "PN" + nextNumber.ToString("D5");
             }
         }
+
+        public InsertOrUpdateResult AddPhuTung(PhuTung item)
+        {
+            try
+            {
+                using (var conn = _db.GetConnection())
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "INSERT INTO PHUTUNG (MaPhuTung, TenPhuTung, DonGiaNhap, DonGiaBan, SoLuongTon) " +
+                                      "VALUES(@mapt, @ten, 0, 0, 0)";
+                    cmd.Parameters.Add("@mapt", SqlDbType.Char, 7).Value = item.MaPhuTung;
+                    cmd.Parameters.Add("@ten", SqlDbType.NVarChar, 50).Value = item.TenPhuTung;
+   
+                    int row = cmd.ExecuteNonQuery();
+                    if (row != 0)
+                    {
+                        return new InsertOrUpdateResult
+                        {
+                            Success = true,
+                            SuccessMessage = "Thêm thông tin thành công"
+                        };
+                    }
+                    else
+                    {
+                        return new InsertOrUpdateResult
+                        {
+                            Success = false,
+                            ErrorMessage = "Biển số xe đã tồn tại"
+                        };
+                    }
+
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("SQL Error: " + ex.Message);
+                return new InsertOrUpdateResult
+                {
+                    Success = false,
+                    ErrorMessage = "Lỗi kết nối tới máy chủ"
+                };
+            }
+        }
+
+        public InsertOrUpdateResult DeletePhuTung(string mapt)
+        {
+            try
+            {
+                using (var conn = _db.GetConnection())
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "DELETE FROM PHUTUNG WHERE MaPhuTung = @mapt";
+                    cmd.Parameters.Add("@mapt", SqlDbType.Char, 7).Value = mapt;
+
+
+                    int row = cmd.ExecuteNonQuery();
+                    if (row != 0)
+                    {
+                        return new InsertOrUpdateResult
+                        {
+                            Success = true,
+                            SuccessMessage = "Xóa thông tin thành công"
+                        };
+                    }
+                    else
+                    {
+                        return new InsertOrUpdateResult
+                        {
+                            Success = false,
+                            ErrorMessage = "Xóa thông tin không thành công"
+                        };
+                    }
+
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("SQL Error: " + ex.Message);
+                return new InsertOrUpdateResult
+                {
+                    Success = false,
+                    ErrorMessage = "Lỗi kết nối tới máy chủ"
+                };
+            }
+        }
+
 
         public InsertOrUpdateResult InsertIntoPhieuNhap(string mapn, DateTime ngaynhap, decimal tongtien)
         {
@@ -174,5 +285,185 @@ namespace QuanLiGaRaOto.Service
                 };
             }
         }
+
+        public GetPhuTungResult GetPhuTungFull()
+        {
+            try
+            {
+                using (var conn = _db.GetConnection())
+                using (var cmd = conn.CreateCommand())
+                {
+
+                    cmd.CommandText =
+                        "SELECT MaPhuTung, TenPhuTung, DonGiaNhap, DonGiaBan, SoLuongTon " +
+                        "FROM PHUTUNG";
+
+
+                    var list = new BindingList<PhuTung>();
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            list.Add(new PhuTung
+                            {
+                                MaPhuTung = reader["MaPhuTung"].ToString(),
+                                TenPhuTung = reader["TenPhuTung"].ToString(),
+                                DonGiaNhap = Convert.ToInt32(reader["DonGiaNhap"]),
+                                DonGiaBan = Convert.ToInt32(reader["DonGiaBan"]),
+                                SoLuongTon = Convert.ToInt32(reader["SoLuongTon"])
+
+                            });
+                        }
+                    }
+
+                    if (list.Count == 0)
+                    {
+                        return new GetPhuTungResult
+                        {
+                            Success = true,
+                            ListPhuTung = list
+                        };
+                    }
+
+                    return new GetPhuTungResult
+                    {
+                        Success = true,
+                        ListPhuTung = list
+                    };
+                }
+            }
+            catch (SqlException)
+            {
+                return new GetPhuTungResult
+                {
+                    Success = false,
+                    ErrorMessage = "Lỗi kết nối tới server"
+                };
+            }
+        }
+
+        public GetPhuTungResult SearchPhuTung(string searchText, int type)
+        {
+            try
+            {
+                using (var conn = _db.GetConnection())
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText =
+                        "SELECT MaPhuTung, TenPhuTung, DonGiaNhap, DonGiaBan, SoLuongTon " +
+                        "FROM PHUTUNG ";
+
+                    switch (type)
+                    {
+                        case 1: // Mã vật tư 
+                            cmd.CommandText += "WHERE MaPhuTung LIKE @ma";
+                            cmd.Parameters.Add("@ma", SqlDbType.VarChar, 20)
+                                          .Value = "%" + searchText.Trim() + "%";
+                            break;
+
+                        case 2: // Tên vật tư
+                            cmd.CommandText += "WHERE TenPhuTung LIKE @ten";
+                            cmd.Parameters.Add("@ten", SqlDbType.NVarChar, 50)
+                                          .Value = "%" + searchText.Trim() + "%";
+                            break;
+
+                        default:
+                            return new GetPhuTungResult
+                            {
+                                Success = false,
+                                ErrorMessage = "Loại tìm kiếm không hợp lệ"
+                            };
+                    }
+
+                    var list = new BindingList<PhuTung>();
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            list.Add(new PhuTung
+                            {
+                                MaPhuTung = reader["MaPhuTung"].ToString(),
+                                TenPhuTung = reader["TenPhuTung"].ToString(),
+                                DonGiaNhap = Convert.ToInt32(reader["DonGiaNhap"]),
+                                DonGiaBan = Convert.ToInt32(reader["DonGiaBan"]),
+                                SoLuongTon = Convert.ToInt32(reader["SoLuongTon"])
+
+                            });
+                        }
+                    }
+
+                    return new GetPhuTungResult
+                    {
+                        Success = true,
+                        ListPhuTung = list
+                    };
+                }
+            }
+            catch (SqlException)
+            {
+                return new GetPhuTungResult
+                {
+                    Success = false,
+                    ErrorMessage = "Lỗi kết nối tới server"
+                };
+            }
+        }
+
+        public InsertOrUpdateResult UpdatePhuTung(PhuTung item)
+        {
+            try
+            {
+                using (var conn = _db.GetConnection())
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "UPDATE PHUTUNG SET TenPhuTung = @ten, DonGiaNhap = @dgn, DonGiaBan = @dgb WHERE MaPhuTung = @mapt";
+                    cmd.Parameters.Add("@ten", SqlDbType.VarChar, 30).Value = item.TenPhuTung;
+                    cmd.Parameters.Add("@dgn", SqlDbType.Money).Value = item.DonGiaNhap;
+                    cmd.Parameters.Add("@dgb", SqlDbType.Money).Value = item.DonGiaBan;
+                    cmd.Parameters.Add("mapt", SqlDbType.Char, 7).Value = item.MaPhuTung;
+
+                    int row = cmd.ExecuteNonQuery();
+                    if (row != 0)
+                    {
+                        return new InsertOrUpdateResult
+                        {
+                            Success = true,
+                            SuccessMessage = "Cập nhật thông tin thành công"
+                        };
+                    }
+                    else
+                    {
+                        return new InsertOrUpdateResult
+                        {
+                            Success = false,
+                            ErrorMessage = "Cập nhật thông tin thất bại"
+                        };
+                    }
+
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("SQL Error: " + ex.Message);
+                return new InsertOrUpdateResult
+                {
+                    Success = false,
+                    ErrorMessage = "Lỗi kết nối tới máy chủ"
+                };
+            }
+        }
+
+    }
+
+    public class GetPhuTungResult
+    {
+        public bool Success { get; set; }
+        public string ErrorMessage { get; set; }
+        public string SuccessMessage { get; set; }
+
+        public BindingList<PhuTung> ListPhuTung;
     }
 }

@@ -136,7 +136,7 @@ namespace QuanLiGaRaOto
             {
                 MessageBox.Show("Vui lòng chọn thông tin xe", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 return;
-            }
+            }   
 
             ud.Show();
         }

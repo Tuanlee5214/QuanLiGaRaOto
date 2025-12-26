@@ -138,6 +138,7 @@
     </Compile>
     <Compile Include="Model\Car.cs" />
     <Compile Include="Model\Group.cs" />
+    <Compile Include="Model\NoiDung.cs" />
     <Compile Include="Model\PhuTung.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="PNKDetail.cs">
@@ -153,6 +154,7 @@
       <DependentUpon>PSCDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="Service\CarService.cs" />
+    <Compile Include="Service\ContentService.cs" />
     <Compile Include="Service\DatabaseConnection.cs" />
     <Compile Include="Service\ImportOrderService.cs" />
     <Compile Include="Service\PhieuThuTien.cs" />
