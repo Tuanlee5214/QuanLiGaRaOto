@@ -61,6 +61,7 @@
             this.button1.TabIndex = 45;
             this.button1.Text = "Cập nhật thông tin";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.UpdateContentInfo);
             // 
             // label4
             // 
@@ -173,6 +174,7 @@
             this.Name = "UpdateContentRepair";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddContentRepair";
+            this.Load += new System.EventHandler(this.UpdateContentRepair_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -186,9 +188,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox textBox3;
+        public System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
     }
