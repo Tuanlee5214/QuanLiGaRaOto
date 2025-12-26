@@ -138,6 +138,7 @@
     </Compile>
     <Compile Include="Model\Car.cs" />
     <Compile Include="Model\Group.cs" />
+    <Compile Include="Model\HieuXe.cs" />
     <Compile Include="Model\NoiDung.cs" />
     <Compile Include="Model\PhuTung.cs" />
     <Compile Include="Model\User.cs" />

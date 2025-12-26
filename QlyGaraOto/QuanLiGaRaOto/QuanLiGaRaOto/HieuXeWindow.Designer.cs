@@ -93,6 +93,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -133,6 +134,7 @@
             // 
             // HieuXe
             // 
+            this.HieuXe.DataPropertyName = "HieuXee";
             this.HieuXe.HeaderText = "Hiệu xe";
             this.HieuXe.MinimumWidth = 6;
             this.HieuXe.Name = "HieuXe";
@@ -181,6 +183,7 @@
             this.button2.Text = "Xóa thông tin hiệu xe";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.DeleteHieuXe);
             // 
             // button3
             // 
@@ -212,6 +215,7 @@
             this.button6.Size = new System.Drawing.Size(65, 32);
             this.button6.TabIndex = 33;
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.SearchHieuXe);
             // 
             // HieuXeWindow
             // 
@@ -230,6 +234,7 @@
             this.Name = "HieuXeWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HieuXeWindow";
+            this.Activated += new System.EventHandler(this.LoadHieuXe);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

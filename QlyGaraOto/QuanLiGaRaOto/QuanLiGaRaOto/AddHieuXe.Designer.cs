@@ -57,6 +57,7 @@
             this.button4.TabIndex = 72;
             this.button4.Text = "Thêm thông tin";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.AddHieuXeInfo);
             // 
             // label7
             // 
