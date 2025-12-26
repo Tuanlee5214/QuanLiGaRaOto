@@ -59,6 +59,7 @@
             this.button1.TabIndex = 45;
             this.button1.Text = "Thêm phụ tùng";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.AddVTPT1);
             // 
             // label3
             // 
@@ -126,6 +127,7 @@
             this.textBox1.Location = new System.Drawing.Point(253, 110);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(398, 29);
             this.textBox1.TabIndex = 49;
             this.textBox1.TabStop = false;

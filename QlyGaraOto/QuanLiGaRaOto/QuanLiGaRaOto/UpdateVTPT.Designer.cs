@@ -63,6 +63,7 @@
             this.button1.TabIndex = 34;
             this.button1.Text = "Cập nhật thông tin";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.UpdateVTPTInfo);
             // 
             // label4
             // 
@@ -109,6 +110,7 @@
             this.textBox3.Size = new System.Drawing.Size(398, 29);
             this.textBox3.TabIndex = 29;
             this.textBox3.TabStop = false;
+            this.textBox3.TextChanged += new System.EventHandler(this.TextChange);
             // 
             // textBox2
             // 
@@ -217,12 +219,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox textBox3;
+        public System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox4;
+        public System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label5;
     }
 }
