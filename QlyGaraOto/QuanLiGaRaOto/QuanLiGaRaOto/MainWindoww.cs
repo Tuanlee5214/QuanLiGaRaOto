@@ -22,9 +22,10 @@ namespace QuanLiGaRaOto
             var fday = new DateTime(2000, 1, 1, 0, 0, 0);
             var sday = new DateTime(2100, 1, 1, 0, 0, 0);
             dataGridView1.DataSource = CarService.Instance.GetCars(fday, sday).ListCar;
+
         }
 
-        
+
 
         private void OpenUserInfo_Click(object sender, EventArgs e)
         {
@@ -227,6 +228,19 @@ namespace QuanLiGaRaOto
 
         private void ExportFIle(object sender, EventArgs e)
         {
+            // Không có dữ liệu để xuất
+            if (dataGridView1.Rows.Count == 0 ||
+                (dataGridView1.Rows.Count == 1 && dataGridView1.Rows[0].IsNewRow))
+            {
+                MessageBox.Show(
+                    "Không có dữ liệu để xuất",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
             using (SaveFileDialog sfd = new SaveFileDialog())
             {
                 sfd.Filter = "Excel Files|*.xlsx";
@@ -235,11 +249,16 @@ namespace QuanLiGaRaOto
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
                     ExportDataGridViewToExcel(dataGridView1, sfd.FileName);
-                    MessageBox.Show("Xuất Excel thành công");
+                    MessageBox.Show(
+                        "Xuất Excel thành công",
+                        "Thông báo",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
                 }
             }
-
         }
+
 
         private void ExportDataGridViewToExcel(DataGridView dgv, string filePath)
         {
