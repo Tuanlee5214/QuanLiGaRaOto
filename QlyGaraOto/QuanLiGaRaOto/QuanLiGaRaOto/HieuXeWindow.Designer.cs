@@ -167,6 +167,7 @@
             this.button5.Text = "Xuất ra file chi tiết";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.ExportFile);
             // 
             // button2
             // 
