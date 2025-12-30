@@ -124,7 +124,7 @@ namespace QuanLiGaRaOto
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(0, 30);
+            this.panel1.Location = new System.Drawing.Point(0, 28);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1924, 54);
@@ -155,7 +155,7 @@ namespace QuanLiGaRaOto
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1924, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1924, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -167,7 +167,7 @@ namespace QuanLiGaRaOto
             this.thôngTinTàiKhoảnHiệnToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thôngTinTàiKhoảnHiệnToolStripMenuItem.Image = global::QuanLiGaRaOto.Properties.Resources.shield;
             this.thôngTinTàiKhoảnHiệnToolStripMenuItem.Name = "thôngTinTàiKhoảnHiệnToolStripMenuItem";
-            this.thôngTinTàiKhoảnHiệnToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
+            this.thôngTinTàiKhoảnHiệnToolStripMenuItem.Size = new System.Drawing.Size(177, 24);
             this.thôngTinTàiKhoảnHiệnToolStripMenuItem.Text = "Thông tin tài khoản";
             // 
             // toolStripMenuItem7
@@ -194,14 +194,14 @@ namespace QuanLiGaRaOto
             this.báoCáoThốngKếToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.báoCáoThốngKếToolStripMenuItem.Image = global::QuanLiGaRaOto.Properties.Resources.layout;
             this.báoCáoThốngKếToolStripMenuItem.Name = "báoCáoThốngKếToolStripMenuItem";
-            this.báoCáoThốngKếToolStripMenuItem.Size = new System.Drawing.Size(162, 26);
+            this.báoCáoThốngKếToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
             this.báoCáoThốngKếToolStripMenuItem.Text = "Báo cáo thống kê";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Image = global::QuanLiGaRaOto.Properties.Resources.cost;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(221, 26);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.toolStripMenuItem1.Text = "Báo cáo doanh thu";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.RevenueReport_Click);
             // 
@@ -209,7 +209,7 @@ namespace QuanLiGaRaOto
             // 
             this.toolStripMenuItem2.Image = global::QuanLiGaRaOto.Properties.Resources.warehouse;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(221, 26);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
             this.toolStripMenuItem2.Text = "Báo cáo tồn kho ";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.OpenQuantityReport);
             // 
@@ -223,7 +223,7 @@ namespace QuanLiGaRaOto
             this.nghiệpVụỨngDụngToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nghiệpVụỨngDụngToolStripMenuItem.Image = global::QuanLiGaRaOto.Properties.Resources.project_manager;
             this.nghiệpVụỨngDụngToolStripMenuItem.Name = "nghiệpVụỨngDụngToolStripMenuItem";
-            this.nghiệpVụỨngDụngToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.nghiệpVụỨngDụngToolStripMenuItem.Size = new System.Drawing.Size(186, 24);
             this.nghiệpVụỨngDụngToolStripMenuItem.Text = "Nghiệp vụ ứng dụng";
             // 
             // toolStripMenuItem3
@@ -272,7 +272,7 @@ namespace QuanLiGaRaOto
             this.quảnLíToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quảnLíToolStripMenuItem.Image = global::QuanLiGaRaOto.Properties.Resources.project_management;
             this.quảnLíToolStripMenuItem.Name = "quảnLíToolStripMenuItem";
-            this.quảnLíToolStripMenuItem.Size = new System.Drawing.Size(96, 26);
+            this.quảnLíToolStripMenuItem.Size = new System.Drawing.Size(96, 24);
             this.quảnLíToolStripMenuItem.Text = "Quản lí ";
             // 
             // toolStripMenuItem9
@@ -347,7 +347,7 @@ namespace QuanLiGaRaOto
             this.hỗTrợToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hỗTrợToolStripMenuItem.Image = global::QuanLiGaRaOto.Properties.Resources.question;
             this.hỗTrợToolStripMenuItem.Name = "hỗTrợToolStripMenuItem";
-            this.hỗTrợToolStripMenuItem.Size = new System.Drawing.Size(87, 26);
+            this.hỗTrợToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
             this.hỗTrợToolStripMenuItem.Text = "Hỗ trợ";
             // 
             // toolStripMenuItem17
@@ -380,7 +380,7 @@ namespace QuanLiGaRaOto
             this.panel2.Controls.Add(this.textBox8);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 84);
+            this.panel2.Location = new System.Drawing.Point(0, 82);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1924, 123);
@@ -510,10 +510,10 @@ namespace QuanLiGaRaOto
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.dataGridView1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 207);
+            this.panel3.Location = new System.Drawing.Point(0, 205);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1924, 432);
+            this.panel3.Size = new System.Drawing.Size(1924, 434);
             this.panel3.TabIndex = 3;
             // 
             // dataGridView1
@@ -521,6 +521,7 @@ namespace QuanLiGaRaOto
             this.dataGridView1.AllowUserToAddRows = false;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -563,7 +564,7 @@ namespace QuanLiGaRaOto
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1924, 432);
+            this.dataGridView1.Size = new System.Drawing.Size(1924, 434);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
