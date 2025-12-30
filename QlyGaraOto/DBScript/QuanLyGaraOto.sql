@@ -300,7 +300,18 @@ FROM HIEUXE HX
 LEFT JOIN DoanhThuTheoHieuXe DT ON DT.HieuXe = HX.HieuXe
 LEFT JOIN LuotSua LS ON LS.HieuXe = HX.HieuXe
 CROSS JOIN TongDoanhThu TDT;
+select ISNULL(sum(SoTienThu), 0)
+from PHIEUTHUTIEN
+where MONTH(NgayThu) = 11 AND YEAR(NgayThu) = 2025
 
+WITH T AS 
+(SELECT CT.MaPhuTung, PT.TenPhuTung, COUNT(CT.SoLuong) AS SoLuong
+FROM CT_PHIEUSUACHUA CT JOIN PHUTUNG PT ON PT.MaPhuTung = CT.MaPhuTung
+						JOIN PHIEUSUACHUA PSC ON PSC.MaPhieuSC = CT.MaPhieuSC
+WHERE MONTH(PSC.NgaySuaChua) = 12 AND YEAR(PSC.NgaySuaChua) = 2025
+GROUP BY CT.MaPhuTung, PT.TenPhuTung)
+SELECT PT.MaPhuTung, PT.TenPhuTung,(ISNULL(T.SoLuong, 0) + pt.SoLuongTon) AS TonDau ,ISNULL(T.SoLuong, 0) AS PhatSinh, PT.SoLuongTon AS TonCuoi
+FROM PHUTUNG PT LEFT JOIN T ON T.MaPhuTung = PT.MaPhuTung
 
 SET DATEFORMAT dmy;
 INSERT INTO NHOMNGUOIDUNG (MaNhomND, TenNhomNguoiDung) VALUES ('GR00001', 'Admin');

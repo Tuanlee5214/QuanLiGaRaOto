@@ -136,6 +136,7 @@
     <Compile Include="ListRepairForm.Designer.cs">
       <DependentUpon>ListRepairForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Report.cs" />
     <Compile Include="Model\Car.cs" />
     <Compile Include="Model\Group.cs" />
     <Compile Include="Model\HieuXe.cs" />
@@ -163,6 +164,7 @@
     <Compile Include="Service\ImportOrderService.cs" />
     <Compile Include="Service\PhieuThuTien.cs" />
     <Compile Include="Service\RepairFormService.cs" />
+    <Compile Include="Service\ReportService.cs" />
     <Compile Include="Service\RuleService.cs" />
     <Compile Include="Service\UserService.cs" />
     <Compile Include="Service\PasswordHasher.cs" />
