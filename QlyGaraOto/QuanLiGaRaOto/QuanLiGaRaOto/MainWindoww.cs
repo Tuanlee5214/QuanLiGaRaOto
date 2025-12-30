@@ -35,6 +35,11 @@ namespace QuanLiGaRaOto
 
         private void RevenueReport_Click(object sender, EventArgs e)
         {
+            if (!PermissionService.XemBaoCao())
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
             RevenueReportWindow rvn = new RevenueReportWindow();
             rvn.Show();
         }
@@ -51,6 +56,11 @@ namespace QuanLiGaRaOto
 
         private void OpenQuantityReport(object sender, EventArgs e)
         {
+            if (!PermissionService.XemBaoCao())
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
             QuatityReport qr = new QuatityReport();
             qr.Show();
         }
@@ -111,18 +121,33 @@ namespace QuanLiGaRaOto
 
         private void OpenMaxCarADay(object sender, EventArgs e)
         {
+            if (!PermissionService.Sua())
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
             MaxCarADay mc = new MaxCarADay();
             mc.Show();
         }
 
         private void OpenTiLeLaiWin(object sender, EventArgs e)
         {
+            if (!PermissionService.Sua())
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
             TiLeLaiWindow tl = new TiLeLaiWindow();
             tl.Show();
         }
 
         private void OpenUpdateCar(object sender, EventArgs e)
         {
+            if(!PermissionService.Sua())
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
             string a;
             a = this.textBox2.Text;
             UpdateCar ud = new UpdateCar(a);
@@ -169,6 +194,7 @@ namespace QuanLiGaRaOto
         {
             var fday = new DateTime(2000, 1, 1, 0, 0, 0);
             var sday = new DateTime(2100, 1, 1, 0, 0, 0);
+            textBox9.Text = UserSession.CurrentUser.TenNguoiDung;
             dataGridView1.DataSource = CarService.Instance.GetCars(fday, sday).ListCar;
         }
 
@@ -208,6 +234,11 @@ namespace QuanLiGaRaOto
 
         private void DeleteCar(object sender, EventArgs e)
         {
+            if (!PermissionService.Xoa())
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
             if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text) ||
                string.IsNullOrWhiteSpace(textBox3.Text) || string.IsNullOrWhiteSpace(textBox4.Text) ||
                string.IsNullOrWhiteSpace(textBox5.Text))
@@ -228,6 +259,11 @@ namespace QuanLiGaRaOto
 
         private void ExportFIle(object sender, EventArgs e)
         {
+            if (!PermissionService.XuatFile())
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
             // Không có dữ liệu để xuất
             if (dataGridView1.Rows.Count == 0 ||
                 (dataGridView1.Rows.Count == 1 && dataGridView1.Rows[0].IsNewRow))

@@ -26,7 +26,12 @@ namespace QuanLiGaRaOto
 
         private void OpenUpdateContentRepair(object sender, EventArgs e)
         {
-            if(string.IsNullOrWhiteSpace(textBox3.Text))
+            if (!PermissionService.Sua())
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(textBox3.Text))
             {
                 MessageBox.Show("Vui lòng chọn nội dung cần cập nhật", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 return;
@@ -40,6 +45,11 @@ namespace QuanLiGaRaOto
 
         private void OpenAddContentRepair(object sender, EventArgs e)
         {
+            if (!PermissionService.Them())
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
             AddConRepair ct = new AddConRepair();
             ct.Show();
         }
@@ -93,6 +103,11 @@ namespace QuanLiGaRaOto
 
         private void DeleteContent(object sender, EventArgs e)
         {
+            if (!PermissionService.Xoa())
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
             if (string.IsNullOrWhiteSpace(textBox3.Text))
             {
                 MessageBox.Show("Vui lòng chọn nội dung cần xóa", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
@@ -118,6 +133,11 @@ namespace QuanLiGaRaOto
 
         private void ExportFile(object sender, EventArgs e)
         {
+            if (!PermissionService.XuatFile())
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
             // Không có dữ liệu để xuất
             if (dataGridView1.Rows.Count == 0 ||
                 (dataGridView1.Rows.Count == 1 && dataGridView1.Rows[0].IsNewRow))

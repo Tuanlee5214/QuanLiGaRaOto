@@ -26,7 +26,12 @@ namespace QuanLiGaRaOto
 
         private void OpenUpdateVTPTWindow(object sender, EventArgs e)
         {
-            if(string.IsNullOrWhiteSpace(textBox1.Text))
+            if (!PermissionService.Sua())
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
             {
                 MessageBox.Show("Vui lòng chọn vật tư phụ tùng cần cập nhật", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 return;
@@ -41,6 +46,11 @@ namespace QuanLiGaRaOto
 
         private void OpenAddVTPTWin(object sender, EventArgs e)
         {
+            if (!PermissionService.Them())
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
             AddVTPT a = new AddVTPT();
             a.Show();
         }
@@ -98,7 +108,12 @@ namespace QuanLiGaRaOto
 
         private void DeleteVTPT(object sender, EventArgs e)
         {
-            if(string.IsNullOrWhiteSpace(textBox1.Text))
+            if (!PermissionService.Xoa())
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
             {
                 MessageBox.Show("Vui lòng chọn vật tư phụ tùng cần xóa", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 return;
@@ -123,6 +138,11 @@ namespace QuanLiGaRaOto
 
         private void ExportFile(object sender, EventArgs e)
         {
+            if (!PermissionService.XuatFile())
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
             // Không có dữ liệu để xuất
             if (dataGridView1.Rows.Count == 0 ||
                 (dataGridView1.Rows.Count == 1 && dataGridView1.Rows[0].IsNewRow))

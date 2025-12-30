@@ -27,6 +27,11 @@ namespace QuanLiGaRaOto
 
         private void OpenAddHieuXe(object sender, EventArgs e)
         {
+            if (!PermissionService.Them())
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
             AddHieuXe hx = new AddHieuXe();
             hx.Show();
         }
@@ -61,7 +66,11 @@ namespace QuanLiGaRaOto
 
         private void DeleteHieuXe(object sender, EventArgs e)
         {
-
+            if (!PermissionService.Xoa())
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
             if (dataGridView1.CurrentRow == null)
             {
                 MessageBox.Show("Vui lòng chọn hiệu xe cần xóa", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
@@ -87,6 +96,11 @@ namespace QuanLiGaRaOto
 
         private void ExportFile(object sender, EventArgs e)
         {
+            if (!PermissionService.XuatFile())
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
             // Không có dữ liệu để xuất
             if (dataGridView1.Rows.Count == 0 ||
                 (dataGridView1.Rows.Count == 1 && dataGridView1.Rows[0].IsNewRow))
