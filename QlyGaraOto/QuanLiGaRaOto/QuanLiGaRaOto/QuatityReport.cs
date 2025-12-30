@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLiGaRaOto.Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,14 @@ namespace QuanLiGaRaOto
         private void CloseQuanReport(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void OpenVTPTBC(object sender, EventArgs e)
+        {
+            int thang = Convert.ToInt32(numericUpDown1.Value);
+            int nam = Convert.ToInt32(numericUpDown2.Value);
+            dataGridView1.DataSource = ReportService.Instance.GetBCTonKho(thang, nam);
+
         }
     }
 }

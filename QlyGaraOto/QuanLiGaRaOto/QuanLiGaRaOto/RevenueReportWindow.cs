@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLiGaRaOto.Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,6 +36,15 @@ namespace QuanLiGaRaOto
         private void ExitRev_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void DisplayReportRevenue(object sender, EventArgs e)
+        {
+            int thang = Convert.ToInt32(numericUpDown1.Value);
+            int nam = Convert.ToInt32(numericUpDown2.Value);
+            var result = ReportService.Instance.GetBCDoanhThu(thang, nam);
+            dataGridView1.DataSource = result;
+            textBox1.Text = ReportService.Instance.GetTongTienThang(thang, nam).ToString();
         }
     }
 }
