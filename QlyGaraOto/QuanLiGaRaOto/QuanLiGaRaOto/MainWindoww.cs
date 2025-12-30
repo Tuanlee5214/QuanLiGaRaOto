@@ -169,6 +169,7 @@ namespace QuanLiGaRaOto
         {
             var fday = new DateTime(2000, 1, 1, 0, 0, 0);
             var sday = new DateTime(2100, 1, 1, 0, 0, 0);
+            textBox9.Text = UserSession.CurrentUser.TenNguoiDung;
             dataGridView1.DataSource = CarService.Instance.GetCars(fday, sday).ListCar;
         }
 

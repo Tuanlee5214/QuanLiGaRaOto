@@ -155,7 +155,7 @@ namespace QuanLiGaRaOto.Service
             }
         }
 
-        public UpdateResult UpdateUser(string tnd, DateTime ngSinh, string maNhomND)
+        public UpdateResult UpdateUser(string tnd, DateTime ngSinh, string maNhomND, string id)
         {
             try
             {
@@ -163,11 +163,12 @@ namespace QuanLiGaRaOto.Service
                 using (var cmd = conn.CreateCommand())
                 {
                     cmd.CommandText =
-                        "UPDATE NGUOIDUNG SET TenNguoiDung = @tnd, NgaySinh = @ngsinh, MaNhomND = @maNhomND";
+                        "UPDATE NGUOIDUNG SET TenNguoiDung = @tnd, NgaySinh = @ngsinh, MaNhomND = @maNhomND WHERE MaNguoiDung = @id";
 
                     cmd.Parameters.Add("@tnd", System.Data.SqlDbType.NVarChar, 30).Value = tnd;
                     cmd.Parameters.Add("@ngSinh", System.Data.SqlDbType.DateTime).Value = ngSinh;
                     cmd.Parameters.Add("@maNhomND", System.Data.SqlDbType.Char, 7).Value = maNhomND;
+                    cmd.Parameters.Add("@id", SqlDbType.Char, 7).Value = id;
 
                     int row = cmd.ExecuteNonQuery();
 

@@ -32,7 +32,12 @@ namespace QuanLiGaRaOto
             var result = UserService.Instance.Login(username, password);
             if(result.Success)
             {
-                MessageBox.Show(result.SuccesMessage);
+                if(UserSession.CurrentUser.MaNhomND == "GR00001")
+                    MessageBox.Show(result.SuccesMessage + ", chào mừng admin!");
+                else
+                    MessageBox.Show(result.SuccesMessage + ", chào mừng nhân viên!");
+
+
                 MainWindoww form = new MainWindoww();
                 this.Hide();
 

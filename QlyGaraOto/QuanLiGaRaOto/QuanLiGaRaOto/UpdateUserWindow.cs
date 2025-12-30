@@ -23,6 +23,7 @@ namespace QuanLiGaRaOto
             this.comboBox1.DataSource = UserService.Instance.GetGroupInfo();
             this.comboBox1.DisplayMember = "TenNhomNguoiDung";
             this.comboBox1.ValueMember = "MaNhomND";
+            this.comboBox1.SelectedValue = UserSession.CurrentGroup.MaNhomND;
         }
 
         private void UpdateUserWindow_Load(object sender, EventArgs e)
@@ -53,7 +54,7 @@ namespace QuanLiGaRaOto
                 return;
             }
 
-            var result = UserService.Instance.UpdateUser(textBox2.Text, dtNgaySinh, comboBox1.SelectedValue.ToString());
+            var result = UserService.Instance.UpdateUser(textBox2.Text, dtNgaySinh, comboBox1.SelectedValue.ToString(), UserSession.CurrentUser.MaNguoiDung);
             if(result.Success)
             {
                 MessageBox.Show(result.SuccesMessage);
