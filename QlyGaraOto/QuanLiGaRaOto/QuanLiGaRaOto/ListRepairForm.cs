@@ -93,6 +93,11 @@ namespace QuanLiGaRaOto
 
         private void ExportFile(object sender, EventArgs e)
         {
+            if (!PermissionService.XuatFile())
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
             // Không có dữ liệu để xuất
             if (dataGridView1.Rows.Count == 0 ||
                 (dataGridView1.Rows.Count == 1 && dataGridView1.Rows[0].IsNewRow))

@@ -36,12 +36,22 @@ namespace QuanLiGaRaOto
 
         private void ChangPass_Click(object sender, EventArgs e)
         {
+            if (!PermissionService.Sua())
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
             ChangePass cb = new ChangePass();
             cb.Show();
         }
 
         private void OpenUpdateWin(object sender, EventArgs e)
         {
+            if (!PermissionService.Sua())
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
             UpdateUserWindow ud = new UpdateUserWindow();
             ud.ShowDialog();
         }
