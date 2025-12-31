@@ -1,7 +1,7 @@
-﻿CREATE DATABASE QUANLYGARA --Đã sửa chữa lại những lỗi sai (2)
+﻿CREATE DATABASE QUANLYGARA111 --Đã sửa chữa lại những lỗi sai (2)
 --Nhập đơn giá nhập, thì cập nhật trong bảng phụ tùng, cập nhật tồn kho và đơn giá nhập, 
 --đồng thời cập nhật giá bán theo tỉ lệ lợi nhuận.
-USE QUANLYGARA
+USE QUANLYGARA111
 
 -- 1.NGUOIDUNG
 CREATE TABLE NGUOIDUNG 
@@ -193,6 +193,7 @@ ALTER TABLE CT_BAOCAOTON ADD CHECK(TonDau >= 0)
 ALTER TABLE CT_BAOCAOTON ADD CHECK(PhatSinh >= 0)
 ALTER TABLE CT_BAOCAOTON ADD CHECK(TonCuoi >= 0)
 
+
 -- NGUOIDUNG → NHOMNGUOIDUNG
 ALTER TABLE NGUOIDUNG
 ADD CONSTRAINT FK_NGUOIDUNG_NHOMNGUOIDUNG
@@ -230,7 +231,7 @@ FOREIGN KEY (MaPhuTung) REFERENCES PHUTUNG(MaPhuTung);
 
 -- CT_PHIEUSUACHUA → NOIDUNGSUACHUA
 ALTER TABLE CT_PHIEUSUACHUA
-ADD CONSTRAINT FK_CT_PHIEUSUACHUA_NOIDUNGSUACHUA
+ADD CONSTRAINT FK_CT_PHIEUSUACHUA_NOIDUNGSUACHUA1
 FOREIGN KEY (MaNoiDung) REFERENCES NOIDUNGSUACHUA(MaNoiDung);
 
 -- PHIEUTHUTIEN → XE
@@ -263,14 +264,16 @@ ALTER TABLE CT_BAOCAOTON
 ADD CONSTRAINT FK_CT_BAOCAOTON_PHUTUNG
 FOREIGN KEY (MaPhuTung) REFERENCES PHUTUNG(MaPhuTung);
 
-ALTER DATABASE QUANLYGARA SET AUTO_CLOSE OFF;
-ALTER DATABASE QUANLYGARA SET AUTO_SHRINK OFF;
+ALTER DATABASE QUANLYGARA111 SET AUTO_CLOSE OFF;
+ALTER DATABASE QUANLYGARA111 SET AUTO_SHRINK OFF;
 
-SET DATEFORMAT dmy;
+SET DATEFORMAT ymd;
+
+--DỮ LIỆU NÀY THÊM ĐỂ TEST KHI NGƯỜI DÙNG CLONE DỰ ÁN TỪ GITHUB VỀ CHẠY LÀ CÓ DỮ LIỆU
 INSERT INTO NHOMNGUOIDUNG (MaNhomND, TenNhomNguoiDung) VALUES ('GR00001', 'Admin');
 INSERT INTO NHOMNGUOIDUNG (MaNhomND, TenNhomNguoiDung) VALUES ('GR00002', N'Nhân viên');
 INSERT INTO NGUOIDUNG (MaNguoiDung, TenNguoiDung, NgaySinh, TenDangNhap, MatKhauBam, MaNhomND) VALUES
-					  ('US00002', N'Lê Anh Tuấn', '11/01/2004', 'TuanLee', 'JAvlGPq9JyTdtvBO6x2llnRI1+gxwIyPqCKAn3THIKk=', 'GR00002')
+					  ('US00002', N'Lê Anh Tuấn', '11/01/2004', 'TuanLee', 'JAvlGPq9JyTdtvBO6x2llnRI1+gxwIyPqCKAn3THIKk=', 'GR00002'),
 					  ('US00001', N'Hoàng Quốc Tùng', '11/12/2003', 'TungLee', 'JAvlGPq9JyTdtvBO6x2llnRI1+gxwIyPqCKAn3THIKk=', 'GR00001')
 INSERT INTO HIEUXE(HieuXe) VALUES('Toyota'),
 								 ('Honda'),
@@ -283,6 +286,23 @@ INSERT INTO HIEUXE(HieuXe) VALUES('Toyota'),
 								 ('Huyndai')
 INSERT INTO HIEUXE (HieuXe) VALUES('Suzuki')
 INSERT INTO QUYDINH (SoXeSuaChuaToiDa, TiLeLai) VALUES(30, 1.05)
+
+INSERT INTO XE (BienSo, HieuXe, TenChuXe, DiaChi, SDT, Email, GhiChu, NgayTiepNhan, TongNo)
+VALUES
+('45QH-980765', 'Nissan', N'Trịnh Thanh Huyền', N'Quảng Nam', '0987675432', 'huyentrinh@gmail.com', NULL, '2025-12-30 14:59:09.063', 0),
+('65MQ-67890', 'Suzuki', N'Lê Hoàng Khánh Linh', N'Xã Thanh Chương Nghệ An', '0987890987', 'linh1@gmail.com', NULL, '2025-12-30 14:57:45.947', 0),
+('67GH-78654', 'KIA', N'Phương Tuấn Khải', N'Quận 7, TP.HCM', '0987890897', 'Khai@gmail.com', NULL, '2025-12-30 09:27:11.633', 0),
+('67NQ-87909', 'Vinfast', N'Trần Minh Phương', N'Quận Tân Bình, TP HCM', '0987908765', 'phuong@gmail.com', NULL, '2025-12-30 14:56:37.680', 0),
+('76IU-65745', 'Nissan', N'Hoàng Tuấn Khôi', N'Quận Bắc Từ Liêm Hà Nội', '0987654456', 'khoi@gmail.com', NULL, '2025-12-30 09:28:03.153', 0),
+('78HD-583967', 'Ford', N'Lâm Quang Giáo', N'Quận 3, TP.HCM', '09887654387', 'GiaoLang@gmail.com', NULL, '2025-12-24 23:34:16.853', 0),
+('78HI-14670', 'Toyota', N'Hoàng Quốc Tùng', N'Quận Tân Bình, TP.HCM', '0876765234', 'Tung@gmail.com', NULL, '2025-12-24 22:59:07.910', 0),
+('78QA-78609', 'Mazda', N'Trần Minh Khôi', N'Quận Ba Đình Hà Nội', '0456789456', 'khoitr@gmail.com', NULL, '2025-12-30 15:00:12.877', 0),
+('79HD-0190', 'Huyndai', N'Trương Phạm Gia Hân', N'Quận 2, TP.HCM', '0988563855', 'Han@gmail.com', NULL, '2025-12-24 22:58:11.320', 0),
+('81AA-58336', 'Mazda', N'Lê Anh Tuấn', N'Quận Bình Thạnh, TP.HCM', '0977821240', '23521711@gm.uit.edu.vn', NULL, '2025-12-24 22:07:21.113', 0),
+('81HD-09111', 'Mazda', N'Lê Thị Hồng Anh', N'Quận Gò Vấp, TP.HCM', '0983455234', 'HongAnh@gmail.com', NULL, '2025-12-26 23:35:15.000', 0),
+('87AA-56845', 'Mitsubishi', N'Nguyễn Thị Khánh Huyền', N'Quận Thanh Xuân, Hà Nội', '0988765456', 'KhanhHuyen@gmail.com', NULL, '2025-12-24 23:00:14.213', 0),
+('89HD-87987', 'Ford', N'Hùng', N'HCM', '0978245124', 'hung@gmail.com', NULL, '2025-12-30 16:33:58.243', 0);
+
 
 INSERT INTO PHUTUNG (MaPhuTung, TenPhuTung, DonGiaNhap, DonGiaBan, SoLuongTon) VALUES
 ('PT00001', N'Lọc nhớt động cơ', 80000, 120000, 50),
