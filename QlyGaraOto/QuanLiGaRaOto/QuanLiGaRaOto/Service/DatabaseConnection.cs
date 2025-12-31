@@ -9,7 +9,7 @@ namespace QuanLiGaRaOto.Service
 {
     public class DatabaseConnection
     {
-        private readonly string _connectString = "Server=TUANLEE\\SQLEXPRESS;Database=QUANLYGARA;Trusted_Connection=True;";
+        private readonly string _connectString = "Server=TUANLEE\\SQLEXPRESS;Database=QUANLYGARA111;Trusted_Connection=True;";
 
         public SqlConnection GetConnection()
         {
